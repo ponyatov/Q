@@ -13,7 +13,7 @@ ABOUT   = '''
 * metaprogramming and managed compilation:
 '''
 
-README  = '''
+README = '''
 # %s
 ## %s
 ### ask for lessons how to reimplement it to know deep in use
@@ -23,7 +23,7 @@ README  = '''
 github: %s
 
 %s
-'''%(MODULE,TITLE,AUTHOR,EMAIL,LICENSE,GITHUB,ABOUT)
+''' % (MODULE, TITLE, AUTHOR, EMAIL, LICENSE, GITHUB, ABOUT)
 
 # need for sys.argv command line parameters
 import sys
@@ -37,10 +37,12 @@ import wx.stc
 app = wx.App()
 
 # main window
-main = wx.Frame(None,title='%s'%sys.argv) ; main.Show()
+main = wx.Frame(None, title='%s' % sys.argv) ; main.Show()
 
 # menu
 menu = wx.MenuBar() ; main.SetMenuBar(menu)
+# file
+file = menu.Append('&File')
 
 # editor
 editor = wx.stc.StyledTextCtrl(main) ; editor.SetValue(README)
@@ -49,10 +51,11 @@ editor = wx.stc.StyledTextCtrl(main) ; editor.SetValue(README)
 ## fetch screen height as base for font scale
 displaY = wx.GetDisplaySizeMM()[1]
 ## fetch available font from system
-font = wx.Font(displaY/11,wx.FONTFAMILY_MODERN,wx.FONTSTYLE_NORMAL,wx.FONTWEIGHT_BOLD)
+font = wx.Font(displaY / 11,
+               wx.FONTFAMILY_MODERN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
 ## set default styling in editor
 editor.StyleSetSpec(wx.stc.STC_STYLE_DEFAULT,
-                    'face:%s,size:%s'%(font.FaceName,font.PointSize))
+                    'face:%s,size:%s' % (font.FaceName, font.PointSize))
 
 # start GUI
 app.MainLoop()
