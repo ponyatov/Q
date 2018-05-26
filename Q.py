@@ -5,15 +5,27 @@ AUTHOR  = 'Dmitry Ponyatov'
 EMAIL   = 'dponyatov@gmail.com'
 LICENSE = 'All rights reserved'
 
+ABOUT   = '''
+* OS IDE CAD/CAM/CAE RAD CAL (computer assisted learning)
+* script languages: Python FORTH SmallTalk
+* DB: (hyper)graph object knowledge database
+* AI: Mynsky frames semantic hypergraph inference system
+* metaprogramming and managed compilation:
+'''
+
 README  = '''
 # %s
 ## %s
+### ask for lessons how to reimplement it to know deep in use
 
 (c) %s <<%s>>, %s
 
 github: %s
-'''%(MODULE,TITLE,AUTHOR,EMAIL,LICENSE,GITHUB)
 
+%s
+'''%(MODULE,TITLE,AUTHOR,EMAIL,LICENSE,GITHUB,ABOUT)
+
+# need for sys.argv command line parameters
 import sys
 
 # use wxPython
@@ -32,6 +44,15 @@ menu = wx.MenuBar() ; main.SetMenuBar(menu)
 
 # editor
 editor = wx.stc.StyledTextCtrl(main) ; editor.SetValue(README)
+
+# large monospace font adopted for screen size
+## fetch screen height as base for font scale
+displaY = wx.GetDisplaySizeMM()[1]
+## fetch available font from system
+font = wx.Font(displaY/11,wx.FONTFAMILY_MODERN,wx.FONTSTYLE_NORMAL,wx.FONTWEIGHT_BOLD)
+## set default styling in editor
+editor.StyleSetSpec(wx.stc.STC_STYLE_DEFAULT,
+                    'face:%s,size:%s'%(font.FaceName,font.PointSize))
 
 # start GUI
 app.MainLoop()
