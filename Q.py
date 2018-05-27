@@ -79,26 +79,8 @@ import wx.stc
 ## wxApplication
 app = wx.App()
 
-## main window
-main = wx.Frame(None, title='%s' % sys.argv) ; main.Show()
-
-## menu
-menu = wx.MenuBar() ; main.SetMenuBar(menu)
-## file
-file = wx.Menu() ; menu.Append(file, '&File')
-## file/save
-save = file.Append(wx.ID_SAVE, '&Save')
-## file/quit
-quit = file.Append(wx.ID_EXIT, '&Quit')
-main.Bind(wx.EVT_MENU, lambda e:main.Close(), quit)
-## help
-help = wx.Menu() ; menu.Append(help, '&Help')
-## help/about
-about = help.Append(wx.ID_ABOUT, '&About\tF1')
-main.Bind(wx.EVT_MENU, lambda e:wx.MessageBox(README), about)
-
-## editor
-editor = wx.stc.StyledTextCtrl(main) ; editor.SetValue(README)
+## @defgroup editor IDE/Text editor
+## @{
 
 # large monospace font adopted for screen size
 ## fetch screen height as base for font scale
@@ -106,9 +88,60 @@ displaY = wx.GetDisplaySizeMM()[1]
 ## fetch available font from system
 font = wx.Font(displaY / 11,
                wx.FONTFAMILY_MODERN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
-## set default styling in editor
-editor.StyleSetSpec(wx.stc.STC_STYLE_DEFAULT,
-                    'face:%s,size:%s' % (font.FaceName, font.PointSize))
+
+## text editor window
+class Editor(wx.Frame):
+    ## construct text editor
+    ## @param[in] parent 
+    def __init__(self, parent, title):
+        wx.Frame.__init__(self, parent, title=title)
+        self.initMenu()
+        self.initEditor()
+    def initMenu(self):
+        ## menu
+        self.menu = wx.MenuBar() ; self.SetMenuBar(self.menu)
+        
+        ## file
+        self.file = wx.Menu() ; self.menu.Append(self.file, '&File')
+        ## file/save
+        self.save = self.file.Append(wx.ID_SAVE, '&Save')
+        ## file/quit
+        self.quit = self.file.Append(wx.ID_EXIT, '&Quit')
+        self.Bind(wx.EVT_MENU, lambda e:self.Close(), self.quit)
+        
+        ## debug
+        self.debug = wx.Menu() ; self.menu.Append(self.debug,'&Debug')
+        ## debug/refresh
+        self.refresh = self.debug.Append(wx.ID_REFRESH,'&Refresh\tF12')
+        ## debug/vocabulary
+        self.words = self.debug.Append(wx.ID_ANY,'&Vocabulary\tF9',kind=wx.ITEM_CHECK)
+        ## debug/stack
+        self.stack = self.debug.Append(wx.ID_ANY,'&Stack\tF8',kind=wx.ITEM_CHECK)
+
+        ## help
+        self.help = wx.Menu() ; self.menu.Append(self.help, '&Help')
+        ## help/about
+        self.about = self.help.Append(wx.ID_ABOUT, '&About\tF1')
+        self.Bind(wx.EVT_MENU, lambda e:wx.MessageBox(README), self.about)
+    
+    def initEditor(self):
+        ## editor
+        self.editor = wx.stc.StyledTextCtrl(self)
+        ## set default styling in editor
+        self.editor.StyleSetSpec(wx.stc.STC_STYLE_DEFAULT,
+                        'face:%s,size:%s' % (font.FaceName, font.PointSize))
+
+## main window
+main = Editor(None, title = sys.argv[0] + '.src') ; main.Show()
+main.editor.SetValue(README)
+
+## stack window
+stack = Editor(main, title = sys.argv[0] + '.stack')
+
+## vocabulary window
+words = Editor(main,title = sys.argv[0] + '.words')
+
+## @}
 
 # start GUI
 app.MainLoop()
