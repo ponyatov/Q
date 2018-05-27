@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   0: "mq",
   1: "q",
   2: "q",
-  3: "m"
+  3: "mq"
 };
 
 var indexSectionNames =

@@ -1,3 +1,8 @@
+## @file
+
+## @defgroup meta Metainformation
+## @{
+
 MODULE  = 'Q'
 TITLE   = 'Qbject system'
 GITHUB  = 'https://github.com/ponyatov/Q'
@@ -24,6 +29,22 @@ github: %s
 
 %s
 ''' % (MODULE, TITLE, AUTHOR, EMAIL, LICENSE, GITHUB, ABOUT)
+
+## @}
+
+## @defgroup qbject Qbject class tree
+## @brief Generic types class system (metaprogramming and symbolic computations)
+## @{
+
+class Qbject:
+    def __init__(self, V):
+        # type:value must be compatible with PLY library token objects
+        self.type = self.__class__.__name__.lower()
+        self.value = V
+    def __repr__(self):
+        return '<%s:%s>' % (self.type, self.value)
+    
+## @}
 
 # need for sys.argv command line parameters
 import sys
