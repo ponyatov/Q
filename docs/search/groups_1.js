@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['metainformation',['Metainformation',['../group__meta.html',1,'']]]
+  ['ide_2ftext_20editor',['IDE/Text editor',['../group__editor.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quit',['quit',['../group__gui.html#ga80e423450cb69b0a11f7f2a45d200ff0',1,'Q']]]
+  ['quit',['quit',['../classQ_1_1Editor.html#a8d3c587fd4772abd6482caa84709826c',1,'Q::Editor']]]
 ];

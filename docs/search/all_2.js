@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['display',['displaY',['../group__gui.html#gafaddd1ef96fb97d9a28a5ce69d8e65a6',1,'Q']]],
-  ['dump',['dump',['../classQ_1_1Qbject.html#af7e0bf5ceeb22043dd9c30e6740f8b53',1,'Q::Qbject']]]
+  ['debug',['debug',['../classQ_1_1Editor.html#ad13eeb70208cb67f7afb579fb58433bf',1,'Q::Editor']]],
+  ['display',['displaY',['../group__gui.html#gace770be7f3c532a0826e5be00e5aa4a4',1,'Q']]],
+  ['dump',['dump',['../classQ_1_1Qbject.html#a17b0fe36e271395176249b090b5f5fca',1,'Q::Qbject']]]
 ];

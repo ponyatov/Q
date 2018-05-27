@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['file',['file',['../group__gui.html#gaa643c8b56f34123b9e6e83ec63bddfa9',1,'Q']]],
-  ['font',['font',['../group__gui.html#gad91a8bc6da430a8d74d547516bdff675',1,'Q']]]
+  ['file',['file',['../classQ_1_1Editor.html#afbfc58a587333723ca60b3d509757b34',1,'Q::Editor']]],
+  ['font',['font',['../group__gui.html#gae8712249405b7e9fdfa94fa3309098cd',1,'Q']]]
 ];

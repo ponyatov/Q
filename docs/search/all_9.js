@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['q_2epy',['Q.py',['../Q_8py.html',1,'']]],
-  ['qbject_20class_20tree',['Qbject class tree',['../group__qbject.html',1,'']]],
-  ['qbject',['Qbject',['../classQ_1_1Qbject.html',1,'Q']]],
-  ['quit',['quit',['../group__gui.html#ga80e423450cb69b0a11f7f2a45d200ff0',1,'Q']]]
+  ['main',['main',['../group__editor.html#gad80cfeec4072187513b8f258c2ac78ea',1,'Q']]],
+  ['menu',['menu',['../classQ_1_1Editor.html#a6b2916a42e4812ca3d8b868331476104',1,'Q::Editor']]],
+  ['metainformation',['Metainformation',['../group__meta.html',1,'']]],
+  ['module',['MODULE',['../group__meta.html#ga932db1df5a9bfe85cdd5e35e2b337f51',1,'Q']]]
 ];
