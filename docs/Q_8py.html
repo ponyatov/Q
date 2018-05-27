@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Modules</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Modules</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,71 +90,89 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html">Q.Qbject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">generic Object class (the name was chosen not to interfere with Python3)  <a href="classQ_1_1Qbject.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ga932db1df5a9bfe85cdd5e35e2b337f51"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga932db1df5a9bfe85cdd5e35e2b337f51"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>Q.MODULE</b> = 'Q'</td></tr>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__meta.html#ga932db1df5a9bfe85cdd5e35e2b337f51">Q.MODULE</a> = 'Q'</td></tr>
+<tr class="memdesc:ga932db1df5a9bfe85cdd5e35e2b337f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">module name <br /></td></tr>
 <tr class="separator:ga932db1df5a9bfe85cdd5e35e2b337f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3af079540a2f99c94b8c0f20fc50dfa1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3af079540a2f99c94b8c0f20fc50dfa1"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>Q.TITLE</b> = 'Qbject system'</td></tr>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__meta.html#ga3af079540a2f99c94b8c0f20fc50dfa1">Q.TITLE</a> = 'Qbject system'</td></tr>
+<tr class="memdesc:ga3af079540a2f99c94b8c0f20fc50dfa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">short info <br /></td></tr>
 <tr class="separator:ga3af079540a2f99c94b8c0f20fc50dfa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7691caff420bd4e296f3abc3a00d4df9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7691caff420bd4e296f3abc3a00d4df9"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>Q.GITHUB</b> = 'https://github.com/ponyatov/Q'</td></tr>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__meta.html#ga7691caff420bd4e296f3abc3a00d4df9">Q.GITHUB</a> = 'https://github.com/ponyatov/Q'</td></tr>
+<tr class="memdesc:ga7691caff420bd4e296f3abc3a00d4df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">repository location <br /></td></tr>
 <tr class="separator:ga7691caff420bd4e296f3abc3a00d4df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8b3fe3d838c5abc7d6e528439341548b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8b3fe3d838c5abc7d6e528439341548b"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>Q.AUTHOR</b> = 'Dmitry Ponyatov'</td></tr>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__meta.html#ga8b3fe3d838c5abc7d6e528439341548b">Q.AUTHOR</a> = 'Dmitry Ponyatov'</td></tr>
+<tr class="memdesc:ga8b3fe3d838c5abc7d6e528439341548b"><td class="mdescLeft">&#160;</td><td class="mdescRight">author <br /></td></tr>
 <tr class="separator:ga8b3fe3d838c5abc7d6e528439341548b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadcae40abcf1c076db11a0611df10b97d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gadcae40abcf1c076db11a0611df10b97d"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>Q.EMAIL</b> = 'dponyatov@gmail.com'</td></tr>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__meta.html#gadcae40abcf1c076db11a0611df10b97d">Q.EMAIL</a> = 'dponyatov@gmail.com'</td></tr>
+<tr class="memdesc:gadcae40abcf1c076db11a0611df10b97d"><td class="mdescLeft">&#160;</td><td class="mdescRight">contact emain <br /></td></tr>
 <tr class="separator:gadcae40abcf1c076db11a0611df10b97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5b111efebdf93c89c1de1e38b2c3aedf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5b111efebdf93c89c1de1e38b2c3aedf"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>Q.LICENSE</b> = 'All rights reserved'</td></tr>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__meta.html#ga5b111efebdf93c89c1de1e38b2c3aedf">Q.LICENSE</a> = 'All rights reserved'</td></tr>
+<tr class="memdesc:ga5b111efebdf93c89c1de1e38b2c3aedf"><td class="mdescLeft">&#160;</td><td class="mdescRight">license <br /></td></tr>
 <tr class="separator:ga5b111efebdf93c89c1de1e38b2c3aedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf6aa7c14e10e1ed35f0b1ddcb5cac9f1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><b>Q.ABOUT</b></td></tr>
+<tr class="memitem:gaf6aa7c14e10e1ed35f0b1ddcb5cac9f1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__meta.html#gaf6aa7c14e10e1ed35f0b1ddcb5cac9f1">Q.ABOUT</a></td></tr>
+<tr class="memdesc:gaf6aa7c14e10e1ed35f0b1ddcb5cac9f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">longer project about  <a href="group__meta.html#gaf6aa7c14e10e1ed35f0b1ddcb5cac9f1">More...</a><br /></td></tr>
 <tr class="separator:gaf6aa7c14e10e1ed35f0b1ddcb5cac9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga79014de61338491cd87643f9b1ab43c3"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><b>Q.README</b></td></tr>
+<tr class="memitem:ga79014de61338491cd87643f9b1ab43c3"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__meta.html#ga79014de61338491cd87643f9b1ab43c3">Q.README</a></td></tr>
+<tr class="memdesc:ga79014de61338491cd87643f9b1ab43c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">README.md.  <a href="group__meta.html#ga79014de61338491cd87643f9b1ab43c3">More...</a><br /></td></tr>
 <tr class="separator:ga79014de61338491cd87643f9b1ab43c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88326d5c1068d52ff3b6fe7390d038ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88326d5c1068d52ff3b6fe7390d038ad"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><b>Q.app</b> = wx.App()</td></tr>
-<tr class="separator:a88326d5c1068d52ff3b6fe7390d038ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac39f4897d4a04f8807657cec6c06adb1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac39f4897d4a04f8807657cec6c06adb1"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><b>Q.main</b> = wx.Frame(None, title='%s' % sys.argv)</td></tr>
-<tr class="separator:ac39f4897d4a04f8807657cec6c06adb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa890c63af95a7622f622cde1c41057f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa890c63af95a7622f622cde1c41057f3"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><b>Q.menu</b> = wx.MenuBar()</td></tr>
-<tr class="separator:aa890c63af95a7622f622cde1c41057f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa643c8b56f34123b9e6e83ec63bddfa9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa643c8b56f34123b9e6e83ec63bddfa9"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><b>Q.file</b> = wx.Menu()</td></tr>
-<tr class="separator:aa643c8b56f34123b9e6e83ec63bddfa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a62e32d6edd42459c27979c4e7bacb0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a62e32d6edd42459c27979c4e7bacb0"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><b>Q.save</b> = file.Append(wx.ID_SAVE, '&amp;Save')</td></tr>
-<tr class="separator:a4a62e32d6edd42459c27979c4e7bacb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80e423450cb69b0a11f7f2a45d200ff0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80e423450cb69b0a11f7f2a45d200ff0"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><b>Q.quit</b> = file.Append(wx.ID_EXIT, '&amp;Quit')</td></tr>
-<tr class="separator:a80e423450cb69b0a11f7f2a45d200ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bcb7b53cd908aec46465f834ba851a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bcb7b53cd908aec46465f834ba851a6"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><b>Q.help</b> = wx.Menu()</td></tr>
-<tr class="separator:a0bcb7b53cd908aec46465f834ba851a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09ac78a86c412ac58adc453fab235cb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09ac78a86c412ac58adc453fab235cb4"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><b>Q.about</b> = help.Append(wx.ID_ABOUT, '&amp;About\tF1')</td></tr>
-<tr class="separator:a09ac78a86c412ac58adc453fab235cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f390735cf9a9d3e7186283d6a3f87f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f390735cf9a9d3e7186283d6a3f87f4"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><b>Q.editor</b> = wx.stc.StyledTextCtrl(main)</td></tr>
-<tr class="separator:a9f390735cf9a9d3e7186283d6a3f87f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaddd1ef96fb97d9a28a5ce69d8e65a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afaddd1ef96fb97d9a28a5ce69d8e65a6"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><b>Q.displaY</b> = wx.GetDisplaySizeMM()</td></tr>
-<tr class="memdesc:afaddd1ef96fb97d9a28a5ce69d8e65a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">fetch screen height as base for font scale <br /></td></tr>
-<tr class="separator:afaddd1ef96fb97d9a28a5ce69d8e65a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad91a8bc6da430a8d74d547516bdff675"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><b>Q.font</b></td></tr>
-<tr class="memdesc:ad91a8bc6da430a8d74d547516bdff675"><td class="mdescLeft">&#160;</td><td class="mdescRight">fetch available font from system  <a href="#ad91a8bc6da430a8d74d547516bdff675">More...</a><br /></td></tr>
-<tr class="separator:ad91a8bc6da430a8d74d547516bdff675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88326d5c1068d52ff3b6fe7390d038ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga88326d5c1068d52ff3b6fe7390d038ad"></a>
+tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#ga88326d5c1068d52ff3b6fe7390d038ad">Q.app</a> = wx.App()</td></tr>
+<tr class="memdesc:ga88326d5c1068d52ff3b6fe7390d038ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">wxApplication <br /></td></tr>
+<tr class="separator:ga88326d5c1068d52ff3b6fe7390d038ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac39f4897d4a04f8807657cec6c06adb1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac39f4897d4a04f8807657cec6c06adb1"></a>
+tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#gac39f4897d4a04f8807657cec6c06adb1">Q.main</a> = wx.Frame(None, title='%s' % sys.argv)</td></tr>
+<tr class="memdesc:gac39f4897d4a04f8807657cec6c06adb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">main window <br /></td></tr>
+<tr class="separator:gac39f4897d4a04f8807657cec6c06adb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa890c63af95a7622f622cde1c41057f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa890c63af95a7622f622cde1c41057f3"></a>
+tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#gaa890c63af95a7622f622cde1c41057f3">Q.menu</a> = wx.MenuBar()</td></tr>
+<tr class="memdesc:gaa890c63af95a7622f622cde1c41057f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">menu <br /></td></tr>
+<tr class="separator:gaa890c63af95a7622f622cde1c41057f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa643c8b56f34123b9e6e83ec63bddfa9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa643c8b56f34123b9e6e83ec63bddfa9"></a>
+tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#gaa643c8b56f34123b9e6e83ec63bddfa9">Q.file</a> = wx.Menu()</td></tr>
+<tr class="memdesc:gaa643c8b56f34123b9e6e83ec63bddfa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">file <br /></td></tr>
+<tr class="separator:gaa643c8b56f34123b9e6e83ec63bddfa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a62e32d6edd42459c27979c4e7bacb0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga4a62e32d6edd42459c27979c4e7bacb0"></a>
+tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#ga4a62e32d6edd42459c27979c4e7bacb0">Q.save</a> = file.Append(wx.ID_SAVE, '&amp;Save')</td></tr>
+<tr class="memdesc:ga4a62e32d6edd42459c27979c4e7bacb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">file/save <br /></td></tr>
+<tr class="separator:ga4a62e32d6edd42459c27979c4e7bacb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80e423450cb69b0a11f7f2a45d200ff0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga80e423450cb69b0a11f7f2a45d200ff0"></a>
+tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#ga80e423450cb69b0a11f7f2a45d200ff0">Q.quit</a> = file.Append(wx.ID_EXIT, '&amp;Quit')</td></tr>
+<tr class="memdesc:ga80e423450cb69b0a11f7f2a45d200ff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">file/quit <br /></td></tr>
+<tr class="separator:ga80e423450cb69b0a11f7f2a45d200ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0bcb7b53cd908aec46465f834ba851a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0bcb7b53cd908aec46465f834ba851a6"></a>
+tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#ga0bcb7b53cd908aec46465f834ba851a6">Q.help</a> = wx.Menu()</td></tr>
+<tr class="memdesc:ga0bcb7b53cd908aec46465f834ba851a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">help <br /></td></tr>
+<tr class="separator:ga0bcb7b53cd908aec46465f834ba851a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09ac78a86c412ac58adc453fab235cb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga09ac78a86c412ac58adc453fab235cb4"></a>
+tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#ga09ac78a86c412ac58adc453fab235cb4">Q.about</a> = help.Append(wx.ID_ABOUT, '&amp;About\tF1')</td></tr>
+<tr class="memdesc:ga09ac78a86c412ac58adc453fab235cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">help/about <br /></td></tr>
+<tr class="separator:ga09ac78a86c412ac58adc453fab235cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f390735cf9a9d3e7186283d6a3f87f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9f390735cf9a9d3e7186283d6a3f87f4"></a>
+tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#ga9f390735cf9a9d3e7186283d6a3f87f4">Q.editor</a> = wx.stc.StyledTextCtrl(main)</td></tr>
+<tr class="memdesc:ga9f390735cf9a9d3e7186283d6a3f87f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">editor <br /></td></tr>
+<tr class="separator:ga9f390735cf9a9d3e7186283d6a3f87f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafaddd1ef96fb97d9a28a5ce69d8e65a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafaddd1ef96fb97d9a28a5ce69d8e65a6"></a>
+tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#gafaddd1ef96fb97d9a28a5ce69d8e65a6">Q.displaY</a> = wx.GetDisplaySizeMM()</td></tr>
+<tr class="memdesc:gafaddd1ef96fb97d9a28a5ce69d8e65a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">fetch screen height as base for font scale <br /></td></tr>
+<tr class="separator:gafaddd1ef96fb97d9a28a5ce69d8e65a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad91a8bc6da430a8d74d547516bdff675"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#gad91a8bc6da430a8d74d547516bdff675">Q.font</a></td></tr>
+<tr class="memdesc:gad91a8bc6da430a8d74d547516bdff675"><td class="mdescLeft">&#160;</td><td class="mdescRight">fetch available font from system  <a href="group__gui.html#gad91a8bc6da430a8d74d547516bdff675">More...</a><br /></td></tr>
+<tr class="separator:gad91a8bc6da430a8d74d547516bdff675"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 27 2018 11:54:19 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 27 2018 12:05:25 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

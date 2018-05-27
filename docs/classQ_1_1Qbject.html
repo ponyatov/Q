@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Modules</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Modules</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,32 +93,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Q.Qbject Class Reference<div class="ingroups"><a class="el" href="group__qbject.html">Qbject class tree</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>generic Object class (the name was chosen not to interfere with Python3)  
+ <a href="classQ_1_1Qbject.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac4631ec849612780bfa2494e45730d1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4631ec849612780bfa2494e45730d1d"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#ac4631ec849612780bfa2494e45730d1d">__init__</a></td></tr>
+<tr class="memdesc:ac4631ec849612780bfa2494e45730d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct with given value <br /></td></tr>
 <tr class="separator:ac4631ec849612780bfa2494e45730d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3b3a680291667dfee977dd6e0422c48"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3b3a680291667dfee977dd6e0422c48"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__repr__</b></td></tr>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#ab3b3a680291667dfee977dd6e0422c48">__repr__</a></td></tr>
+<tr class="memdesc:ab3b3a680291667dfee977dd6e0422c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">text dump (tree form) <br /></td></tr>
 <tr class="separator:ab3b3a680291667dfee977dd6e0422c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7e0bf5ceeb22043dd9c30e6740f8b53"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7e0bf5ceeb22043dd9c30e6740f8b53"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#af7e0bf5ceeb22043dd9c30e6740f8b53">dump</a></td></tr>
+<tr class="memdesc:af7e0bf5ceeb22043dd9c30e6740f8b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">dump any object in tree form <br /></td></tr>
+<tr class="separator:af7e0bf5ceeb22043dd9c30e6740f8b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78319704695b13f61ea5fa1654945592"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78319704695b13f61ea5fa1654945592"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#a78319704695b13f61ea5fa1654945592">head</a></td></tr>
+<tr class="memdesc:a78319704695b13f61ea5fa1654945592"><td class="mdescLeft">&#160;</td><td class="mdescRight">dump object in short form (header only) <br /></td></tr>
+<tr class="separator:a78319704695b13f61ea5fa1654945592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0aa624c54899f7c7752fcb6b4c2f6386"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0aa624c54899f7c7752fcb6b4c2f6386"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#a0aa624c54899f7c7752fcb6b4c2f6386">type</a></td></tr>
+<tr class="memdesc:a0aa624c54899f7c7752fcb6b4c2f6386"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt;type:value&gt; must be compatible with PLY library token objects <br /></td></tr>
 <tr class="separator:a0aa624c54899f7c7752fcb6b4c2f6386"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84b33421e4ddd26af7c58bc9c4e9b953"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84b33421e4ddd26af7c58bc9c4e9b953"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#a84b33421e4ddd26af7c58bc9c4e9b953">value</a></td></tr>
+<tr class="memdesc:a84b33421e4ddd26af7c58bc9c4e9b953"><td class="mdescLeft">&#160;</td><td class="mdescRight">single value <br /></td></tr>
 <tr class="separator:a84b33421e4ddd26af7c58bc9c4e9b953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>generic Object class (the name was chosen not to interfere with Python3) </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="Q_8py.html">Q.py</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 27 2018 11:54:19 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 27 2018 12:05:25 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

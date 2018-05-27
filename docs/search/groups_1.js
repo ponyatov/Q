@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qbject_20class_20tree',['Qbject class tree',['../group__qbject.html',1,'']]]
+  ['metainformation',['Metainformation',['../group__meta.html',1,'']]]
 ];

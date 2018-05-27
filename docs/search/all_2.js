@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['q_2epy',['Q.py',['../Q_8py.html',1,'']]],
-  ['qbject',['Qbject',['../classQ_1_1Qbject.html',1,'Q']]]
+  ['display',['displaY',['../group__gui.html#gafaddd1ef96fb97d9a28a5ce69d8e65a6',1,'Q']]],
+  ['dump',['dump',['../classQ_1_1Qbject.html#af7e0bf5ceeb22043dd9c30e6740f8b53',1,'Q::Qbject']]]
 ];

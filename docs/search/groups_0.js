@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['metainformation',['Metainformation',['../group__meta.html',1,'']]]
+  ['gui',['GUI',['../group__gui.html',1,'']]]
 ];
