@@ -42,7 +42,17 @@ main = wx.Frame(None, title='%s' % sys.argv) ; main.Show()
 # menu
 menu = wx.MenuBar() ; main.SetMenuBar(menu)
 # file
-file = menu.Append('&File')
+file = wx.Menu() ; menu.Append(file, '&File')
+# file/save
+save = file.Append(wx.ID_SAVE, '&Save')
+# file/quit
+quit = file.Append(wx.ID_EXIT, '&Quit')
+main.Bind(wx.EVT_MENU, lambda e:main.Close(), quit)
+# help
+help = wx.Menu() ; menu.Append(help, '&Help')
+# help/about
+about = help.Append(wx.ID_ABOUT, '&About\tF1')
+main.Bind(wx.EVT_MENU, lambda e:wx.MessageBox(README), about)
 
 # editor
 editor = wx.stc.StyledTextCtrl(main) ; editor.SetValue(README)
