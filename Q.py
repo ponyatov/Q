@@ -88,7 +88,7 @@ W = Voc('FORTH')
 import sys
 
 ## @defgroup gui GUI
-## wxPython wrappers and microIDE
+## `wxPython` wrappers and microIDE
 ## @{
 
 # use wxPython
@@ -150,6 +150,7 @@ class Editor(wx.Frame):
         ## help/about
         self.about = self.help.Append(wx.ID_ABOUT, '&About\tF1')
         self.Bind(wx.EVT_MENU, lambda e:wx.MessageBox(README), self.about)
+        
     ## initialize editor
     def initEditor(self):
         ## editor
@@ -157,6 +158,18 @@ class Editor(wx.Frame):
         ## set default styling in editor
         self.editor.StyleSetSpec(wx.stc.STC_STYLE_DEFAULT,
                         'face:%s,size:%s' % (font.FaceName, font.PointSize))
+        self.initColorizer()
+    ## initialize colorizer
+    def initColorizer(self):
+        # define styles
+        self.style_COMMENT = 1
+        self.editor.StyleSetSpec(self.style_COMMENT,'fore:#0000FF')
+        # bind colorizer event
+        self.editor.Bind(wx.stc.EVT_STC_STYLENEEDED,self.onStyle)
+    ## colorizer callback
+    def onStyle(self,e):    
+        lexer.input(self.editor.GetValue())
+    
     ## toggle words window
     def toggleWords(self,e):
         if words.IsShown(): words.Hide()
@@ -189,4 +202,3 @@ words = Editor(main, title = sys.argv[0] + '.words')
 app.MainLoop()
 
 ## @}
-
