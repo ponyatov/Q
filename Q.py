@@ -253,18 +253,18 @@ t_string_ignore = ''
 ## begin `<string>` state
 def t_string(t):
     r'\''
-    t.lexer.push_state('string')
-    t.lexer.lexstring = ''
-    t.lexer.posstring = t.lexpos
-    t.lexer.toklen = 1
+    t.lexer.push_state('string')    # push to <string> lexer mode
+    t.lexer.lexstring = ''          # prepare empty string value collector
+    t.lexer.posstring = t.lexpos    # save position for editor colorizer
+    t.lexer.toklen = 1              # collect original lexeme length in editor
 ## end `<string>` state
 def t_string_string(t):
     r'\''
-    t.lexer.pop_state()
-    t.lexpos = t.lexer.posstring
-    t.value = t.lexer.lexstring
-    t.toklen = t.lexer.toklen+1
-    return String(t.value, token=t)
+    t.lexer.pop_state()             # return from <string> lexer mode
+    t.value = t.lexer.lexstring     # use collected string value
+    t.lexpos = t.lexer.posstring    # use saved postion (first char in editor)
+    t.toklen = t.lexer.toklen+1     # use lexeme length (with \n as 2 chars)
+    return String(t.value, token=t) # return resulting string token
 ## `\t`abulation
 def t_string_tab(t):
     r'\\t'
