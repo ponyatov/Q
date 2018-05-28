@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['primitive',['Primitive',['../classQ_1_1Primitive.html',1,'Q']]]
+  ['integer',['Integer',['../classQ_1_1Integer.html',1,'Q']]]
 ];

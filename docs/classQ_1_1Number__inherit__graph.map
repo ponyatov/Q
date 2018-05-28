@@ -1,0 +1,7 @@
+<map id="Q.Number" name="Q.Number">
+<area shape="rect" id="node4" href="$classQ_1_1Integer.html" title="integer " alt="" coords="49,229,125,256"/>
+<area shape="rect" id="node2" href="$classQ_1_1Primitive.html" title="primitive " alt="" coords="44,80,131,107"/>
+<area shape="rect" id="node3" href="$classQ_1_1Qbject.html" title="generic Object class (the name was chosen not to interfere with Python3) " alt="" coords="50,5,125,32"/>
+<area shape="rect" id="node5" href="$classQ_1_1Binary.html" title="machine binary " alt="" coords="5,304,79,331"/>
+<area shape="rect" id="node6" href="$classQ_1_1Hex.html" title="machine hex " alt="" coords="103,304,163,331"/>
+</map>

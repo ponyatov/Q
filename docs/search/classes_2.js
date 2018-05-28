@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['editor',['Editor',['../classQ_1_1Editor.html',1,'Q']]]
+  ['defoperator',['DefOperator',['../classQ_1_1DefOperator.html',1,'Q']]]
 ];

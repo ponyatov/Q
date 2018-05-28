@@ -81,6 +81,18 @@ class Primitive(Qbject): pass
 ## symbol
 class Symbol(Primitive): pass
 
+## number
+class Number(Primitive): pass
+
+## integer
+class Integer(Number): pass
+
+## machine hex
+class Hex(Integer): pass
+
+## machine binary
+class Binary(Integer): pass
+
 ## data container
 class Container(Qbject): pass
 
@@ -154,7 +166,8 @@ import ply.lex as lex
 ##
 ## every token type must be equal to lowercased 
 ## name of correspondent Qbject class
-tokens = ['comment','operator','defoperator','symbol']
+tokens = ['comment','operator','defoperator','symbol',
+          'number','integer','hex','binary']
 
 ## drop spaces
 t_ignore = ' \t\r'
@@ -169,15 +182,35 @@ def t_comment(t):
     r'[\#\\].*\n'
     return Comment(t.value, token=t)
 
-## compiler words
-def t_defopeator(t):
-    r'[\[\]\,\:\;]'
-    return DefOperator(t.value, token=t)
+## hex
+def t_hex(t):
+    r'0x[0-9A-Fa-f]+'
+    return Hex(t.value, token=t)
+
+## binary
+def t_binary(t):
+    r'0b[01]+'
+    return Binary(t.value, token=t)
+
+## number
+def t_number(t):
+    r'[\+\-]?[0-9]+(\.[0-9]*)?([eE][\+\-]?[0-9]+)?'
+    return Number(t.value, token=t)
+
+## integer
+def t_integer(t):
+    r'[\+\-]?[0-9]+'
+    return Integer(t.value, token=t)
 
 ## operator
 def t_operator(t):
     r'[\(\)\<\>\@\.\+\-\*\/]'
     return Operator(t.value, token=t)
+
+## compiler words
+def t_defopeator(t):
+    r'[\[\]\,\:\;]'
+    return DefOperator(t.value, token=t)
 
 ## symbol
 def t_symbol(t):
@@ -271,6 +304,8 @@ class Editor(wx.Frame):
         self.editor.StyleSetSpec(wx.stc.STC_STYLE_DEFAULT,
                         'face:%s,size:%s' % (font.FaceName, font.PointSize))
         self.initColorizer()
+        # load default file
+        self.onLoad(None)
     ## initialize colorizer
     def initColorizer(self):
         # define styles
@@ -283,6 +318,9 @@ class Editor(wx.Frame):
         ## compiler words
         self.style_COMPILER = 3
         self.editor.StyleSetSpec(self.style_COMPILER,'fore:#FF0000')
+        ## number literals
+        self.style_NUMBER = 4
+        self.editor.StyleSetSpec(self.style_NUMBER,'fore:#008888')
         # bind colorizer event
         self.editor.Bind(wx.stc.EVT_STC_STYLENEEDED,self.onStyle)
     ## colorizer callback
@@ -298,6 +336,8 @@ class Editor(wx.Frame):
                 self.editor.SetStyling(token.toklen,self.style_OPERATOR)
             elif token.type == 'defoperator':
                 self.editor.SetStyling(token.toklen,self.style_COMPILER)
+            elif token.type in ['number','integer','hex','binary']:
+                self.editor.SetStyling(token.toklen,self.style_NUMBER)
             else:
                 self.editor.SetStyling(0,0)
     
@@ -319,12 +359,17 @@ class Editor(wx.Frame):
     ## save callback
     def onSave(self,e):
         F = open(self.Title,'w') ; F.write(self.editor.GetValue()) ; F.close()
+    ## load calback
+    def onLoad(self,e):
+        try:
+            F = open(self.Title,'r') ; self.editor.SetValue(F.read()) ; F.close()
+        except IOError: pass # no file
     ## backup (hybernation)
     def onBackup(self,e): backup(W)
 
 ## main window
 main = Editor(None, title = sys.argv[0] + '.src') ; main.Show()
-main.editor.SetValue(README)
+#main.editor.SetValue(README)
 
 ## stack window
 stack = Editor(main, title = sys.argv[0] + '.stack')
