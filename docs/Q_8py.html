@@ -126,6 +126,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Editor.html">Q.Editor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">text editor window  <a href="classQ_1_1Editor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1GUI__thread.html">Q.GUI_thread</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">start GUI in separate thread  <a href="classQ_1_1GUI__thread.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -135,6 +138,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gab7d5b91fb2f0016b2f184b7f95cd3e62"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__persist.html#gab7d5b91fb2f0016b2f184b7f95cd3e62">Q.restore</a> (NAME='FORTH')</td></tr>
 <tr class="memdesc:gab7d5b91fb2f0016b2f184b7f95cd3e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">restore from <code>.image</code>  <a href="group__persist.html#gab7d5b91fb2f0016b2f184b7f95cd3e62">More...</a><br /></td></tr>
 <tr class="separator:gab7d5b91fb2f0016b2f184b7f95cd3e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4fbbf5cc1ca90a9aadf6e1b405e75af5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#ga4fbbf5cc1ca90a9aadf6e1b405e75af5">Q.dot</a> ()</td></tr>
+<tr class="memdesc:ga4fbbf5cc1ca90a9aadf6e1b405e75af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">`.  <a href="group__debug.html#ga4fbbf5cc1ca90a9aadf6e1b405e75af5">More...</a><br /></td></tr>
+<tr class="separator:ga4fbbf5cc1ca90a9aadf6e1b405e75af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad99d6b5acbf3f5b7d4a3c32c248c38a5"><td class="memItemLeft" align="right" valign="top">
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__stringlex.html#gad99d6b5acbf3f5b7d4a3c32c248c38a5">Q.t_string</a> (t)</td></tr>
 <tr class="memdesc:gad99d6b5acbf3f5b7d4a3c32c248c38a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">begin <code>&lt;string&gt;</code> state <br /></td></tr>
@@ -203,6 +209,14 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__interpret.html#ga1498453df66c4250e2c8632e1de6fd5e">Q.WORD</a> ()</td></tr>
 <tr class="memdesc:ga1498453df66c4250e2c8632e1de6fd5e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>WORD ( -- symbol )</code> parse next word name <br /></td></tr>
 <tr class="separator:ga1498453df66c4250e2c8632e1de6fd5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9c817bcc5faf09fe61414b9ce321c6d"><td class="memItemLeft" align="right" valign="top">
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__interpret.html#gaf9c817bcc5faf09fe61414b9ce321c6d">Q.FIND</a> ()</td></tr>
+<tr class="memdesc:gaf9c817bcc5faf09fe61414b9ce321c6d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>FIND ( wordname -- callable )</code> lookup definition/callable object in vocabulary <br /></td></tr>
+<tr class="separator:gaf9c817bcc5faf09fe61414b9ce321c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9de78b2d1cc726db860a767b4e90839"><td class="memItemLeft" align="right" valign="top">
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__interpret.html#gab9de78b2d1cc726db860a767b4e90839">Q.EXECUTE</a> ()</td></tr>
+<tr class="memdesc:gab9de78b2d1cc726db860a767b4e90839"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>EXECUTE ( callable|primitive -- ...|primitive )</code> execute callable <br /></td></tr>
+<tr class="separator:gab9de78b2d1cc726db860a767b4e90839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad31b990f32f53efe23077be0bd057a04"><td class="memItemLeft" align="right" valign="top">
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__interpret.html#gad31b990f32f53efe23077be0bd057a04">Q.INTERPRET</a> (SRC='')</td></tr>
 <tr class="memdesc:gad31b990f32f53efe23077be0bd057a04"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>INTERPRET ( -- )</code> interpreter loop <br /></td></tr>
@@ -266,16 +280,16 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 <tr class="memitem:ga8a621337488165e2a7fa06b70b0ba7dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga8a621337488165e2a7fa06b70b0ba7dc">Q.lexer</a> = lex.lex()</td></tr>
 <tr class="memdesc:ga8a621337488165e2a7fa06b70b0ba7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">FORTH lexer.  <a href="group__parser.html#ga8a621337488165e2a7fa06b70b0ba7dc">More...</a><br /></td></tr>
 <tr class="separator:ga8a621337488165e2a7fa06b70b0ba7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacb31e5d4be9f35f0d9cac6e7c8c11fff"><td class="memItemLeft" align="right" valign="top">
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__voc.html#gacb31e5d4be9f35f0d9cac6e7c8c11fff">Q.W</a> = restore('FORTH')</td></tr>
-<tr class="memdesc:gacb31e5d4be9f35f0d9cac6e7c8c11fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">system vocabulary <br /></td></tr>
-<tr class="separator:gacb31e5d4be9f35f0d9cac6e7c8c11fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3badccbe684b32c268386e85270e77d6"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__voc.html#ga3badccbe684b32c268386e85270e77d6">Q.W</a> = Voc('FORTH')</td></tr>
+<tr class="memdesc:ga3badccbe684b32c268386e85270e77d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">system vocabulary <br /></td></tr>
+<tr class="separator:ga3badccbe684b32c268386e85270e77d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga547d8490204007cd7687931415008da4"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__queue.html#ga547d8490204007cd7687931415008da4">Q.Q</a> = Queue.Queue()</td></tr>
 <tr class="memdesc:ga547d8490204007cd7687931415008da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">queue holds requests to FORTH interpreter <br /></td></tr>
 <tr class="separator:ga547d8490204007cd7687931415008da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga610067988c72736afd9e5cc4e6bc73a6"><td class="memItemLeft" align="right" valign="top">
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__queue.html#ga610067988c72736afd9e5cc4e6bc73a6">Q.forth_thread</a> = FORTH_thread() ; forth_thread.start()</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__queue.html#ga610067988c72736afd9e5cc4e6bc73a6">Q.forth_thread</a> = FORTH_thread()</td></tr>
 <tr class="memdesc:ga610067988c72736afd9e5cc4e6bc73a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">singleton <br /></td></tr>
 <tr class="separator:ga610067988c72736afd9e5cc4e6bc73a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga373412b6390da67607655c11bcec77a4"><td class="memItemLeft" align="right" valign="top">
@@ -301,13 +315,21 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__editor.html#ga1d37ce827aa6af1991e1e3de7c7165cb">Q.words</a> = Editor(main, title = sys.argv[0] + '.words')</td></tr>
 <tr class="memdesc:ga1d37ce827aa6af1991e1e3de7c7165cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">vocabulary window <br /></td></tr>
 <tr class="separator:ga1d37ce827aa6af1991e1e3de7c7165cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga00973adfbe0d3af805da0551237ace37"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#ga00973adfbe0d3af805da0551237ace37">Q.gui_thread</a> = GUI_thread()</td></tr>
+<tr class="memdesc:ga00973adfbe0d3af805da0551237ace37"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI thread singleton. <br /></td></tr>
+<tr class="separator:ga00973adfbe0d3af805da0551237ace37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5b45f27d3528a58fb98b35bc6139ae"><td class="memItemLeft" align="right" valign="top"><a id="acf5b45f27d3528a58fb98b35bc6139ae"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Q_8py.html#acf5b45f27d3528a58fb98b35bc6139ae">Q.stop</a></td></tr>
+<tr class="memdesc:acf5b45f27d3528a58fb98b35bc6139ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">thread stop flag <br /></td></tr>
+<tr class="separator:acf5b45f27d3528a58fb98b35bc6139ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Qbject Virtual Machine (Python implementation) </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 28 2018 16:55:53 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 28 2018 17:49:50 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -70,6 +70,12 @@ class Qbject:
             ## lexeme length
             try: self.toklen = token.toklen
             except AttributeError: self.toklen = len(token.value)
+    ## by default all objects `execute`s in itself
+    def __call__(self): D << self ; return self
+    ## `object[key]` operator
+    def __getitem__(self,key): return self.attr[key]
+    ## `object[key]=val` operator
+    def __setitem__(self,key,o): self.attr[key] = o ; return self
     ## text dump (tree form)
     def __repr__(self): return self.dump()
     ## dump any object in tree form
@@ -162,6 +168,8 @@ class Stack(Container):
     def top(self): return self.nest[-1]
     ## @returns top element
     def pop(self): return self.nest.pop()
+    ## drop all elements
+    def dropall(self): del self.nest[:]
 
 ## associative array (vocabulary)
 class Voc(Container):
@@ -191,7 +199,14 @@ class Operator(Meta): pass
 class DefOperator(Operator): pass
 
 ## function
-class Function(Meta): pass
+class Function(Meta):
+    ## wrap Python function 
+    def __init__(self,F):
+        Meta.__init__(self, F.__name__)
+        ## wrap function
+        self.fn = F
+    ## implement callable via wrapped function call
+    def __call__(self): return self.fn()
 
 ## @}
     
@@ -225,6 +240,14 @@ def restore(NAME='FORTH'):
 
 ## data stack
 D = Stack('DATA')
+
+## @defgroup debug Debug
+## @{
+
+## `. = DROPALL ( ... -- )` clean interpreter state in every code logic block
+def dot(): D.dropall()
+
+## @}
 
 ## @defgroup parser Syntax parser
 ## @brief powered with
@@ -357,6 +380,9 @@ def WORD():
 ## `FIND ( wordname -- callable )` lookup definition/callable object in vocabulary
 def FIND():
     WN = D.pop().value ; D << W[WN]
+    
+## `EXECUTE ( callable|primitive -- ...|primitive )` execute callable
+def EXECUTE(): D.pop()()
 
 ## `INTERPRET ( -- )` interpreter loop
 def INTERPRET(SRC=''):
@@ -365,6 +391,7 @@ def INTERPRET(SRC=''):
         if not WORD(): break    # end of source
         if D.top().type in ['symbol','operator']:
             FIND()
+        EXECUTE()
     main.onRefresh(None)
 
 ## @}
@@ -379,6 +406,7 @@ try: W = restore('FORTH')
 except IOError:
     W = Voc('FORTH')
     W << WORD << FIND << INTERPRET
+    W['.'] = Function(dot)
     backup(W)
 
 ## @}
@@ -394,8 +422,10 @@ Q = Queue.Queue()
 
 ## request processing thread
 class FORTH_thread(threading.Thread):
+    ## expand with `stop` flag
     def __init__(self):
         threading.Thread.__init__(self)
+        ## thread stop flag
         self.stop = False
     ## loop processing
     def run(self):
@@ -575,9 +605,11 @@ words = Editor(main, title = sys.argv[0] + '.words')
 
 ## @}
 
-# start GUI in separate thread
+## start GUI in separate thread
 class GUI_thread(threading.Thread):
+    ## run wxApplication in thread to fix problem with errors in `FORTH/Q.get`
     def run(self): app.MainLoop()
+## GUI thread singleton
 gui_thread = GUI_thread() 
 
 ## @}
@@ -586,4 +618,5 @@ if __name__ == '__main__':
     forth_thread.start()
     gui_thread.start()
     gui_thread.join()
+    ## thread stop flag
     forth_thread.stop = True ; forth_thread.join()

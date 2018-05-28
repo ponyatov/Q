@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qbject',['Qbject',['../classQ_1_1Qbject.html',1,'Q']]]
+  ['primitive',['Primitive',['../classQ_1_1Primitive.html',1,'Q']]]
 ];
