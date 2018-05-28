@@ -4,7 +4,7 @@
 # need for sys.argv command line parameters and support file naming
 import sys
 
-## @defgroup meta Metainformation
+## @defgroup metainfo Metainformation
 ## @brief Project info
 ## @{
 
@@ -68,13 +68,15 @@ class Qbject:
             ## lexeme line number in source code
             self.lineno = token.lineno
             ## lexeme length
-            self.toklen = len(token.value)
+            try: self.toklen = token.toklen
+            except AttributeError: self.toklen = len(token.value)
     ## text dump (tree form)
     def __repr__(self): return self.dump()
     ## dump any object in tree form
     def dump(self, depth=0,prefix=''):
         S = self.pad(depth) + self.head(prefix=prefix)
         for i in self.attr: S += self.attr[i].dump(depth+1,prefix='%s='%i)
+        for j in self.nest: S += j.dump(depth+1)
         return S
     ## pad tree element
     def pad(self,N): return '\n' + '\t' * N
@@ -82,41 +84,101 @@ class Qbject:
     def head(self,prefix=''):
         return '%s<%s:%s>' % (prefix,self.type, self.value)
     
+## @defgroup prim Primitive
+## @brief primitive computer types (evaluates to itself)
+## @{
+    
 ## primitive
 class Primitive(Qbject): pass
 
 ## symbol
 class Symbol(Primitive): pass
 
+## string
+class String(Primitive):
+    ## dump string in linear format
+    def head(self,prefix):
+        S = '%s<%s:\'' % (prefix, self.type)
+        for c in self.value:
+            if c == '\n': S += '\\n'
+            elif c == '\r': S += '\\r'
+            elif c == '\t': S += '\\t'
+            else: S += c
+        return S+'\'>'
+
 ## number
-class Number(Primitive): pass
+class Number(Primitive):
+    ## construct with `float:value`
+    def __init__(self,V,token=None):
+        Primitive.__init__(self, V, token)
+        ## convert with `float()`
+        self.value = float(V)
 
 ## integer
-class Integer(Number): pass
+class Integer(Number):
+    ## construct with `int:value`
+    def __init__(self,V,token=None):
+        Primitive.__init__(self, V, token)
+        ## convert with `int()`
+        self.value = int(V)
 
 ## machine hex
-class Hex(Integer): pass
+class Hex(Integer):
+    ## override with `int(base=16)`
+    def __init__(self,V,token=None):
+        Primitive.__init__(self, V, token)
+        ## convert with `base=16`
+        self.value = int(V[2:],0x10)
+    ## hex number print
+    def head(self, prefix):
+        return '%s<%s:0x%X>' % (prefix, self.type, self.value)
+
 
 ## machine binary
-class Binary(Integer): pass
+class Binary(Integer):
+    ## override with `int(base=2)`
+    def __init__(self,V,token=None):
+        Primitive.__init__(self, V, token)
+        ## convert with `base=2`
+        self.value = int(V[2:],0x02)
+    ## binary number print
+    def head(self, prefix):
+        return '%s<%s:%s>' % (prefix, self.type, '0b{0:b}'.format(self.value))
+    
+## @}
+
+## @defgroup container Container
+## @brief Objects can contain nested data elements
+## @{
 
 ## data container
 class Container(Qbject): pass
 
 ## data stack
-class Stack(Container): pass
+class Stack(Container):
+    ## `<<` operator
+    def __lshift__(self,o): self.nest.append(o) ; return self
 
 ## associative array (vocabulary)
 class Voc(Container):
+    ## `<<` operator
     def __lshift__(self,o):
         self.attr[o.__name__] = Function(o)
         return self
+    
+## @}
+
+## @defgroup meta Meta
+## @brief Metaprogramming types and active objects
+## @{
         
 ## metaprogramming
 class Meta(Qbject): pass
 
 ## comment
-class Comment(Meta): pass
+class Comment(Meta,String):
+    ## dump head in linear string format
+    def head(self,prefix): return String.head(self,prefix)
 
 ## operator
 class Operator(Meta): pass
@@ -126,6 +188,8 @@ class DefOperator(Operator): pass
 
 ## function
 class Function(Meta): pass
+
+## @}
     
 ## @}
 
@@ -157,11 +221,7 @@ def restore(NAME='FORTH'):
 ## @{
 
 ## data stack
-S = Stack('DATA')
-
-## system vocabulary
-
-W = restore('FORTH')
+D = Stack('DATA')
 
 ## @defgroup parser Syntax parser
 ## @brief powered with
@@ -179,11 +239,48 @@ import ply.lex as lex
 ##
 ## every token type must be equal to lowercased 
 ## name of correspondent Qbject class
-tokens = ['comment','operator','defoperator','symbol',
+tokens = ['comment','operator','defoperator','symbol','string',
           'number','integer','hex','binary']
 
 ## drop spaces
 t_ignore = ' \t\r'
+
+## extra lexer states
+states = (('string','exclusive'),)
+
+## ignore in `<string>` state
+t_string_ignore = ''
+## begin `<string>` state
+def t_string(t):
+    r'\''
+    t.lexer.push_state('string')
+    t.lexer.lexstring = ''
+    t.lexer.posstring = t.lexpos
+    t.lexer.toklen = 1
+## end `<string>` state
+def t_string_string(t):
+    r'\''
+    t.lexer.pop_state()
+    t.lexpos = t.lexer.posstring
+    t.value = t.lexer.lexstring
+    t.toklen = t.lexer.toklen+1
+    return String(t.value, token=t)
+## `\t`abulation
+def t_string_tab(t):
+    r'\\t'
+    t.lexer.lexstring += '\t' ; t.lexer.toklen += len(t.value)
+## carriage `\r`eturn    
+def t_string_cr(t):
+    r'\\r'
+    t.lexer.lexstring += '\r' ; t.lexer.toklen += len(t.value)
+## line feed `\n`    
+def t_string_lf(t):
+    r'\\n'
+    t.lexer.lexstring += '\n' ; t.lexer.toklen += len(t.value)
+## any other char in `<string>` mode 
+def t_string_char(t):
+    r'.'
+    t.lexer.lexstring += t.value ; t.lexer.toklen += len(t.value)
 
 ## line counter
 def t_newline(t):
@@ -207,7 +304,7 @@ def t_binary(t):
 
 ## number
 def t_number(t):
-    r'[\+\-]?[0-9]+(\.[0-9]*)?([eE][\+\-]?[0-9]+)?'
+    r'[\+\-]?[0-9]+\.([0-9]*)?([eE][\+\-]?[0-9]+)?'
     return Number(t.value, token=t)
 
 ## integer
@@ -231,7 +328,7 @@ def t_symbol(t):
     return Symbol(t.value, token=t)
 
 ## required lexer error callback 
-def t_error(t): raise SyntaxError(t)
+def t_ANY_error(t): raise SyntaxError(t)
 
 ## FORTH lexer
 ## @todo use stack to allow `.inc` directive
@@ -242,9 +339,28 @@ lexer = lex.lex()
 ## @defgroup interpret Interpreter
 ## @{
 
+## `WORD ( -- symbol )` parse next word name
+def WORD():
+    token = lexer.token()
+    if token: D << token
+    return token
+
 ## `INTERPRET ( -- )` interpreter loop
 def INTERPRET(SRC=''):
-    print SRC
+    lexer.input(SRC)
+    while True:
+        if not WORD(): break    # end of source
+    main.onRefresh(None)
+
+## @}
+
+## @defgroup voc Vocabulary
+## @brief System-wide bindings between symbols (word names) and (executable) objects
+## @{
+
+## system vocabulary
+
+W = restore('FORTH')
 W << INTERPRET
 
 ## @}
@@ -288,7 +404,7 @@ app = wx.App()
 ## fetch screen height as base for font scale
 displaY = wx.GetDisplaySizeMM()[1]
 ## fetch available font from system
-font = wx.Font(displaY / 11,
+font = wx.Font(displaY / 0x11,
                wx.FONTFAMILY_MODERN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
 
 ## @defgroup editor IDE/Text editor
@@ -366,6 +482,9 @@ class Editor(wx.Frame):
         ## number literals
         self.style_NUMBER = 4
         self.editor.StyleSetSpec(self.style_NUMBER,'fore:#008888')
+        ## string literal
+        self.style_STRING = 5
+        self.editor.StyleSetSpec(self.style_STRING,'fore:#888800')
         # bind colorizer event
         self.editor.Bind(wx.stc.EVT_STC_STYLENEEDED,self.onStyle)
     ## colorizer callback
@@ -383,6 +502,8 @@ class Editor(wx.Frame):
                 self.editor.SetStyling(token.toklen,self.style_COMPILER)
             elif token.type in ['number','integer','hex','binary']:
                 self.editor.SetStyling(token.toklen,self.style_NUMBER)
+            elif token.type == 'string':
+                self.editor.SetStyling(token.toklen,self.style_STRING)
             else:
                 self.editor.SetStyling(0,0)
                 
@@ -404,7 +525,7 @@ class Editor(wx.Frame):
     ## update debug windows
     def onRefresh(self,e):
         if words.IsShown(): words.editor.SetValue(W.dump())
-        if stack.IsShown(): stack.editor.SetValue(S.dump())
+        if stack.IsShown(): stack.editor.SetValue(D.dump())
     ## close GUI
     def onClose(self,e):
         main.Close() ; stack.Close() ; words.Close() 

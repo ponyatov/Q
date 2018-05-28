@@ -1,16 +1,18 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classQ_1_1Qbject.html" title="generic Object class (the name was chosen not to interfere with Python3) " alt="" coords="5,132,80,159"/>
+<area shape="rect" id="node1" href="$classQ_1_1Qbject.html" title="generic Object class (the name was chosen not to interfere with Python3) " alt="" coords="5,157,80,184"/>
 <area shape="rect" id="node2" href="$classQ_1_1Container.html" title="data container " alt="" coords="128,56,220,83"/>
-<area shape="rect" id="node5" href="$classQ_1_1Meta.html" title="metaprogramming " alt="" coords="141,132,207,159"/>
-<area shape="rect" id="node9" href="$classQ_1_1Primitive.html" title="primitive " alt="" coords="131,208,217,235"/>
-<area shape="rect" id="node3" href="$classQ_1_1Stack.html" title="data stack " alt="" coords="279,5,350,32"/>
-<area shape="rect" id="node4" href="$classQ_1_1Voc.html" title="associative array (vocabulary) " alt="" coords="285,56,344,83"/>
-<area shape="rect" id="node6" href="$classQ_1_1Comment.html" title="comment " alt="" coords="268,107,361,133"/>
-<area shape="rect" id="node7" href="$classQ_1_1Operator.html" title="operator " alt="" coords="271,157,358,184"/>
-<area shape="rect" id="node8" href="$classQ_1_1DefOperator.html" title="definition operator (compiler words) " alt="" coords="409,157,516,184"/>
-<area shape="rect" id="node10" href="$classQ_1_1Number.html" title="number " alt="" coords="273,208,356,235"/>
-<area shape="rect" id="node14" href="$classQ_1_1Symbol.html" title="symbol " alt="" coords="275,259,355,285"/>
-<area shape="rect" id="node11" href="$classQ_1_1Integer.html" title="integer " alt="" coords="425,208,501,235"/>
-<area shape="rect" id="node12" href="$classQ_1_1Binary.html" title="machine binary " alt="" coords="564,183,637,209"/>
-<area shape="rect" id="node13" href="$classQ_1_1Hex.html" title="machine hex " alt="" coords="571,233,631,260"/>
+<area shape="rect" id="node5" href="$classQ_1_1Meta.html" title="metaprogramming " alt="" coords="141,284,207,311"/>
+<area shape="rect" id="node10" href="$classQ_1_1Primitive.html" title="primitive " alt="" coords="131,157,217,184"/>
+<area shape="rect" id="node3" href="$classQ_1_1Stack.html" title="data stack " alt="" coords="276,5,347,32"/>
+<area shape="rect" id="node4" href="$classQ_1_1Voc.html" title="associative array (vocabulary) " alt="" coords="282,56,341,83"/>
+<area shape="rect" id="node6" href="$classQ_1_1Comment.html" title="comment " alt="" coords="409,233,503,260"/>
+<area shape="rect" id="node7" href="$classQ_1_1Function.html" title="function " alt="" coords="268,309,355,336"/>
+<area shape="rect" id="node8" href="$classQ_1_1Operator.html" title="operator " alt="" coords="268,360,355,387"/>
+<area shape="rect" id="node9" href="$classQ_1_1DefOperator.html" title="definition operator (compiler words) " alt="" coords="403,360,509,387"/>
+<area shape="rect" id="node11" href="$classQ_1_1Number.html" title="number " alt="" coords="270,107,353,133"/>
+<area shape="rect" id="node15" href="$classQ_1_1String.html" title="string " alt="" coords="276,208,347,235"/>
+<area shape="rect" id="node16" href="$classQ_1_1Symbol.html" title="symbol " alt="" coords="271,157,351,184"/>
+<area shape="rect" id="node12" href="$classQ_1_1Integer.html" title="integer " alt="" coords="418,107,494,133"/>
+<area shape="rect" id="node13" href="$classQ_1_1Binary.html" title="machine binary " alt="" coords="557,81,631,108"/>
+<area shape="rect" id="node14" href="$classQ_1_1Hex.html" title="machine hex " alt="" coords="564,132,624,159"/>
 </map>

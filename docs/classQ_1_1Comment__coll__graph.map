@@ -1,4 +1,6 @@
 <map id="Q.Comment" name="Q.Comment">
-<area shape="rect" id="node2" href="$classQ_1_1Meta.html" title="metaprogramming " alt="" coords="19,80,85,107"/>
-<area shape="rect" id="node3" href="$classQ_1_1Qbject.html" title="generic Object class (the name was chosen not to interfere with Python3) " alt="" coords="15,5,89,32"/>
+<area shape="rect" id="node2" href="$classQ_1_1Meta.html" title="metaprogramming " alt="" coords="5,155,71,181"/>
+<area shape="rect" id="node3" href="$classQ_1_1Qbject.html" title="generic Object class (the name was chosen not to interfere with Python3) " alt="" coords="47,5,122,32"/>
+<area shape="rect" id="node5" href="$classQ_1_1Primitive.html" title="primitive " alt="" coords="84,80,171,107"/>
+<area shape="rect" id="node4" href="$classQ_1_1String.html" title="string " alt="" coords="95,155,165,181"/>
 </map>
