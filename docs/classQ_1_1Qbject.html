@@ -78,17 +78,24 @@ Inheritance diagram for Q.Qbject:</div>
 <div class="dyncontent">
 <div class="center"><img src="classQ_1_1Qbject__inherit__graph.png" border="0" usemap="#Q_8Qbject_inherit__map" alt="Inheritance graph"/></div>
 <map name="Q_8Qbject_inherit__map" id="Q_8Qbject_inherit__map">
-<area shape="rect" id="node2" href="classQ_1_1Stack.html" title="data stack " alt="" coords="5,80,76,107"/>
-<area shape="rect" id="node3" href="classQ_1_1Voc.html" title="associative array (vocabulary) " alt="" coords="101,80,159,107"/>
+<area shape="rect" id="node2" href="classQ_1_1Container.html" title="data container " alt="" coords="84,80,176,107"/>
+<area shape="rect" id="node5" href="classQ_1_1Meta.html" title="metaprogramming " alt="" coords="229,80,295,107"/>
+<area shape="rect" id="node9" href="classQ_1_1Primitive.html" title="primitive " alt="" coords="379,80,465,107"/>
+<area shape="rect" id="node3" href="classQ_1_1Stack.html" title="data stack " alt="" coords="5,155,76,181"/>
+<area shape="rect" id="node4" href="classQ_1_1Voc.html" title="associative array (vocabulary) " alt="" coords="101,155,159,181"/>
+<area shape="rect" id="node6" href="classQ_1_1Comment.html" title="comment " alt="" coords="183,155,277,181"/>
+<area shape="rect" id="node7" href="classQ_1_1Operator.html" title="operator " alt="" coords="301,155,388,181"/>
+<area shape="rect" id="node8" href="classQ_1_1DefOperator.html" title="definition operator (compiler words) " alt="" coords="291,229,398,256"/>
+<area shape="rect" id="node10" href="classQ_1_1Symbol.html" title="symbol " alt="" coords="413,155,493,181"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a98e22f5ec52253bdbb7922244e4d7577"><td class="memItemLeft" align="right" valign="top"><a id="a98e22f5ec52253bdbb7922244e4d7577"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#a98e22f5ec52253bdbb7922244e4d7577">__init__</a> (self, V)</td></tr>
-<tr class="memdesc:a98e22f5ec52253bdbb7922244e4d7577"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct with given value <br /></td></tr>
-<tr class="separator:a98e22f5ec52253bdbb7922244e4d7577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0adf2ac5a0fb1d96d7a2be8ae475926a"><td class="memItemLeft" align="right" valign="top"><a id="a0adf2ac5a0fb1d96d7a2be8ae475926a"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#a0adf2ac5a0fb1d96d7a2be8ae475926a">__init__</a> (self, V, token=None)</td></tr>
+<tr class="memdesc:a0adf2ac5a0fb1d96d7a2be8ae475926a"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct with given value <br /></td></tr>
+<tr class="separator:a0adf2ac5a0fb1d96d7a2be8ae475926a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7745f2fe20e90298775fa475645beb9"><td class="memItemLeft" align="right" valign="top"><a id="ad7745f2fe20e90298775fa475645beb9"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#ad7745f2fe20e90298775fa475645beb9">__repr__</a> (self)</td></tr>
 <tr class="memdesc:ad7745f2fe20e90298775fa475645beb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">text dump (tree form) <br /></td></tr>
@@ -112,6 +119,18 @@ Public Attributes</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#a84b33421e4ddd26af7c58bc9c4e9b953">value</a></td></tr>
 <tr class="memdesc:a84b33421e4ddd26af7c58bc9c4e9b953"><td class="mdescLeft">&#160;</td><td class="mdescRight">single value <br /></td></tr>
 <tr class="separator:a84b33421e4ddd26af7c58bc9c4e9b953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1012363daa6f57f76eab4f43da07b93f"><td class="memItemLeft" align="right" valign="top"><a id="a1012363daa6f57f76eab4f43da07b93f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#a1012363daa6f57f76eab4f43da07b93f">lexpos</a></td></tr>
+<tr class="memdesc:a1012363daa6f57f76eab4f43da07b93f"><td class="mdescLeft">&#160;</td><td class="mdescRight">lexeme char position in source code <br /></td></tr>
+<tr class="separator:a1012363daa6f57f76eab4f43da07b93f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af115b84b7dc07d3da0a2239833e031cf"><td class="memItemLeft" align="right" valign="top"><a id="af115b84b7dc07d3da0a2239833e031cf"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#af115b84b7dc07d3da0a2239833e031cf">lineno</a></td></tr>
+<tr class="memdesc:af115b84b7dc07d3da0a2239833e031cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">lexeme line number in source code <br /></td></tr>
+<tr class="separator:af115b84b7dc07d3da0a2239833e031cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcf407d08d32d19dd2ce587dc2d37a7d"><td class="memItemLeft" align="right" valign="top"><a id="afcf407d08d32d19dd2ce587dc2d37a7d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Qbject.html#afcf407d08d32d19dd2ce587dc2d37a7d">toklen</a></td></tr>
+<tr class="memdesc:afcf407d08d32d19dd2ce587dc2d37a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">lexeme length <br /></td></tr>
+<tr class="separator:afcf407d08d32d19dd2ce587dc2d37a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>generic Object class (the name was chosen not to interfere with Python3) </p>
@@ -121,7 +140,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 27 2018 20:31:59 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 28 2018 10:17:46 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -1,0 +1,5 @@
+<map id="Q.Container" name="Q.Container">
+<area shape="rect" id="node3" href="$classQ_1_1Stack.html" title="data stack " alt="" coords="5,155,76,181"/>
+<area shape="rect" id="node4" href="$classQ_1_1Voc.html" title="associative array (vocabulary) " alt="" coords="101,155,159,181"/>
+<area shape="rect" id="node2" href="$classQ_1_1Qbject.html" title="generic Object class (the name was chosen not to interfere with Python3) " alt="" coords="47,5,122,32"/>
+</map>

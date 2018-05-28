@@ -49,11 +49,19 @@ github: %s
 ## generic Object class (the name was chosen not to interfere with Python3)
 class Qbject:
     ## construct with given value
-    def __init__(self, V):
+    def __init__(self, V, token=None):
         ## <type:value> must be compatible with PLY library token objects
         self.type = self.__class__.__name__.lower()
         ## single value
         self.value = V
+        # process lexeme data
+        if token:
+            ## lexeme char position in source code
+            self.lexpos = token.lexpos
+            ## lexeme line number in source code
+            self.lineno = token.lineno
+            ## lexeme length
+            self.toklen = len(token.value)
     ## text dump (tree form)
     def __repr__(self): return self.dump()
     ## dump any object in tree form
@@ -84,6 +92,12 @@ class Meta(Qbject): pass
 
 ## comment
 class Comment(Meta): pass
+
+## operator
+class Operator(Meta): pass
+
+## definition operator (compiler words)
+class DefOperator(Operator): pass
     
 ## @}
 
@@ -113,7 +127,7 @@ import ply.lex as lex
 ##
 ## every token type must be equal to lowercased 
 ## name of correspondent Qbject class
-tokens = ['comment','symbol']
+tokens = ['comment','operator','defoperator','symbol']
 
 ## drop spaces
 t_ignore = ' \t\r'
@@ -126,12 +140,22 @@ def t_newline(t):
 ## comment lexeme
 def t_comment(t):
     r'[\#\\].*\n'
-    return Comment(t.value)
+    return Comment(t.value, token=t)
+
+## compiler words
+def t_defopeator(t):
+    r'[\[\]\,\:\;]'
+    return DefOperator(t.value, token=t)
+
+## operator
+def t_operator(t):
+    r'[\(\)\<\>\@\.\+\-\*\/]'
+    return Operator(t.value, token=t)
 
 ## symbol
 def t_symbol(t):
-    r'[a-zA-Z0-9_\(\)\<\>\@\.\,\:\;\+\-\*\/]+'
-    return Symbol(t.value)
+    r'[a-zA-Z0-9_]+'
+    return Symbol(t.value, token=t)
 
 ## required lexer error callback 
 def t_error(t): raise SyntaxError(t)
@@ -225,14 +249,29 @@ class Editor(wx.Frame):
         ## comment
         self.style_COMMENT = 1
         self.editor.StyleSetSpec(self.style_COMMENT,'fore:#0000FF')
+        ## operator
+        self.style_OPERATOR = 2
+        self.editor.StyleSetSpec(self.style_OPERATOR,'fore:#008800')
+        ## compiler words
+        self.style_COMPILER = 3
+        self.editor.StyleSetSpec(self.style_COMPILER,'fore:#FF0000')
         # bind colorizer event
         self.editor.Bind(wx.stc.EVT_STC_STYLENEEDED,self.onStyle)
     ## colorizer callback
-    def onStyle(self,e):    
+    def onStyle(self,e):
         lexer.input(self.editor.GetValue())
         while True:
             token = lexer.token()
-            if not token: break     # end of source
+            if not token: break  # end of source
+            self.editor.StartStyling(token.lexpos, 0xFF)
+            if token.type == 'comment':
+                self.editor.SetStyling(token.toklen,self.style_COMMENT)
+            elif token.type == 'operator':
+                self.editor.SetStyling(token.toklen,self.style_OPERATOR)
+            elif token.type == 'defoperator':
+                self.editor.SetStyling(token.toklen,self.style_COMPILER)
+            else:
+                self.editor.SetStyling(0,0)
     
     ## toggle words window
     def toggleWords(self,e):

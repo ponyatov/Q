@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['head',['head',['../classQ_1_1Qbject.html#a14e9b9b15a5c1ad2dab0eacae182bbfb',1,'Q::Qbject']]],
-  ['help',['help',['../classQ_1_1Editor.html#ab06338d8a7883a6325c42b9efaa0b4df',1,'Q::Editor']]]
+  ['github',['GITHUB',['../group__meta.html#ga7691caff420bd4e296f3abc3a00d4df9',1,'Q']]],
+  ['gui',['GUI',['../group__gui.html',1,'']]]
 ];
