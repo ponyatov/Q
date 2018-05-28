@@ -245,6 +245,10 @@ tokens = ['comment','operator','defoperator','symbol','string',
 ## drop spaces
 t_ignore = ' \t\r'
 
+## @defgroup stringlex String lexer state
+## @brief Special lexer state for string parsing with `\t\r\n..` control chars
+## @{
+
 ## extra lexer states
 states = (('string','exclusive'),)
 
@@ -281,6 +285,8 @@ def t_string_lf(t):
 def t_string_char(t):
     r'.'
     t.lexer.lexstring += t.value ; t.lexer.toklen += len(t.value)
+    
+## @}
 
 ## line counter
 def t_newline(t):

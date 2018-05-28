@@ -59,6 +59,7 @@ $(function() {
 
 <div class="header">
   <div class="summary">
+<a href="#groups">Modules</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -74,36 +75,19 @@ Collaboration diagram for Syntax parser:</div>
 <center><table><tr><td><img src="group__parser.png" border="0" alt="" usemap="#group____parser"/>
 <map name="group____parser" id="group____parser">
 <area shape="rect" id="node1" href="group__forth.html" title="object FORTH interpreter " alt="" coords="5,5,80,32"/>
+<area shape="rect" id="node2" href="group__stringlex.html" title="Special lexer state for string parsing with \t\r\n.. control chars. " alt="" coords="279,5,400,32"/>
 </map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__stringlex"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__stringlex.html">String lexer state</a></td></tr>
+<tr class="memdesc:group__stringlex"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special lexer state for string parsing with <code>\t\r\n..</code> control chars. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gad99d6b5acbf3f5b7d4a3c32c248c38a5"><td class="memItemLeft" align="right" valign="top"><a id="gad99d6b5acbf3f5b7d4a3c32c248c38a5"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#gad99d6b5acbf3f5b7d4a3c32c248c38a5">Q.t_string</a> (t)</td></tr>
-<tr class="memdesc:gad99d6b5acbf3f5b7d4a3c32c248c38a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">begin <code>&lt;string&gt;</code> state <br /></td></tr>
-<tr class="separator:gad99d6b5acbf3f5b7d4a3c32c248c38a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaccb9c3602e09f1359409f4442028b78b"><td class="memItemLeft" align="right" valign="top"><a id="gaccb9c3602e09f1359409f4442028b78b"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#gaccb9c3602e09f1359409f4442028b78b">Q.t_string_string</a> (t)</td></tr>
-<tr class="memdesc:gaccb9c3602e09f1359409f4442028b78b"><td class="mdescLeft">&#160;</td><td class="mdescRight">end <code>&lt;string&gt;</code> state <br /></td></tr>
-<tr class="separator:gaccb9c3602e09f1359409f4442028b78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga32c5e1cd374e83e6651c07d51265baa3"><td class="memItemLeft" align="right" valign="top"><a id="ga32c5e1cd374e83e6651c07d51265baa3"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga32c5e1cd374e83e6651c07d51265baa3">Q.t_string_tab</a> (t)</td></tr>
-<tr class="memdesc:ga32c5e1cd374e83e6651c07d51265baa3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>\t</code>abulation <br /></td></tr>
-<tr class="separator:ga32c5e1cd374e83e6651c07d51265baa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga352151b7106ba15f4fcf556dcc229caa"><td class="memItemLeft" align="right" valign="top"><a id="ga352151b7106ba15f4fcf556dcc229caa"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga352151b7106ba15f4fcf556dcc229caa">Q.t_string_cr</a> (t)</td></tr>
-<tr class="memdesc:ga352151b7106ba15f4fcf556dcc229caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">carriage <code>\r</code>eturn <br /></td></tr>
-<tr class="separator:ga352151b7106ba15f4fcf556dcc229caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga33fec7269fd5655a0fc846860aa594c5"><td class="memItemLeft" align="right" valign="top"><a id="ga33fec7269fd5655a0fc846860aa594c5"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga33fec7269fd5655a0fc846860aa594c5">Q.t_string_lf</a> (t)</td></tr>
-<tr class="memdesc:ga33fec7269fd5655a0fc846860aa594c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">line feed <code>\n</code> <br /></td></tr>
-<tr class="separator:ga33fec7269fd5655a0fc846860aa594c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1b32aa9f88c90b5a2100e926c9ac8009"><td class="memItemLeft" align="right" valign="top"><a id="ga1b32aa9f88c90b5a2100e926c9ac8009"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga1b32aa9f88c90b5a2100e926c9ac8009">Q.t_string_char</a> (t)</td></tr>
-<tr class="memdesc:ga1b32aa9f88c90b5a2100e926c9ac8009"><td class="mdescLeft">&#160;</td><td class="mdescRight">any other char in <code>&lt;string&gt;</code> mode <br /></td></tr>
-<tr class="separator:ga1b32aa9f88c90b5a2100e926c9ac8009"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4b571fe4d1c5eba03cc450ea05b2efc3"><td class="memItemLeft" align="right" valign="top"><a id="ga4b571fe4d1c5eba03cc450ea05b2efc3"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga4b571fe4d1c5eba03cc450ea05b2efc3">Q.t_newline</a> (t)</td></tr>
 <tr class="memdesc:ga4b571fe4d1c5eba03cc450ea05b2efc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">line counter <br /></td></tr>
@@ -154,14 +138,6 @@ Variables</h2></td></tr>
 string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga3973fc9f32504abba7f787311448c0a0">Q.t_ignore</a> = ' \t\r'</td></tr>
 <tr class="memdesc:ga3973fc9f32504abba7f787311448c0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">drop spaces <br /></td></tr>
 <tr class="separator:ga3973fc9f32504abba7f787311448c0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga788b2ab08a448c7ecaf17d22187dbab3"><td class="memItemLeft" align="right" valign="top"><a id="ga788b2ab08a448c7ecaf17d22187dbab3"></a>
-tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga788b2ab08a448c7ecaf17d22187dbab3">Q.states</a> = (('string','exclusive'),)</td></tr>
-<tr class="memdesc:ga788b2ab08a448c7ecaf17d22187dbab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">extra lexer states <br /></td></tr>
-<tr class="separator:ga788b2ab08a448c7ecaf17d22187dbab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga66c5380ccd688ead99a70da980380fc3"><td class="memItemLeft" align="right" valign="top"><a id="ga66c5380ccd688ead99a70da980380fc3"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga66c5380ccd688ead99a70da980380fc3">Q.t_string_ignore</a> = ''</td></tr>
-<tr class="memdesc:ga66c5380ccd688ead99a70da980380fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ignore in <code>&lt;string&gt;</code> state <br /></td></tr>
-<tr class="separator:ga66c5380ccd688ead99a70da980380fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8a621337488165e2a7fa06b70b0ba7dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga8a621337488165e2a7fa06b70b0ba7dc">Q.lexer</a> = lex.lex()</td></tr>
 <tr class="memdesc:ga8a621337488165e2a7fa06b70b0ba7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">FORTH lexer.  <a href="group__parser.html#ga8a621337488165e2a7fa06b70b0ba7dc">More...</a><br /></td></tr>
 <tr class="separator:ga8a621337488165e2a7fa06b70b0ba7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,7 +184,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 28 2018 16:47:44 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 28 2018 16:55:53 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
