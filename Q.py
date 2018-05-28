@@ -63,12 +63,27 @@ class Qbject:
     ## dump object in short form (header only)
     def head(self,prefix=''):
         return '%s<%s:%s>' % (prefix,self.type, self.value)
+    
+## primitive
+class Primitive(Qbject): pass
+
+## symbol
+class Symbol(Primitive): pass
+
+## data container
+class Container(Qbject): pass
 
 ## data stack
-class Stack(Qbject): pass
+class Stack(Container): pass
 
 ## associative array (vocabulary)
-class Voc(Qbject): pass
+class Voc(Container): pass
+
+## metaprogramming
+class Meta(Qbject): pass
+
+## comment
+class Comment(Meta): pass
     
 ## @}
 
@@ -81,6 +96,51 @@ S = Stack('DATA')
 
 ## system vocabulary
 W = Voc('FORTH')
+
+## @defgroup parser Syntax parser
+## @brief powered with
+## <a href="http://www.dabeaz.com/ply/ply.html">PLY library</a>
+## @details (c) David M. Beazley 
+## @{
+
+import ply.lex as lex
+
+## token types binded with @ref qbject
+## @details Every Qbject type can be matched by regexp in string form
+## will be used as token by PLY library. To do it all Qbjects was done 
+## compatible with PLY requirements for token: 
+## they must contain predefined set of fields @see PLY manual.
+##
+## every token type must be equal to lowercased 
+## name of correspondent Qbject class
+tokens = ['comment','symbol']
+
+## drop spaces
+t_ignore = ' \t\r'
+
+## line counter
+def t_newline(t):
+    r'\n+'
+    t.lexer.lineno += len(t.value)
+
+## comment lexeme
+def t_comment(t):
+    r'[\#\\].*\n'
+    return Comment(t.value)
+
+## symbol
+def t_symbol(t):
+    r'[a-zA-Z0-9_\(\)\<\>\@\.\,\:\;\+\-\*\/]+'
+    return Symbol(t.value)
+
+## required lexer error callback 
+def t_error(t): raise SyntaxError(t)
+
+## FORTH lexer
+## @todo use stack to allow `.inc` directive
+lexer = lex.lex()
+
+## @}
 
 ## @}
 
@@ -162,6 +222,7 @@ class Editor(wx.Frame):
     ## initialize colorizer
     def initColorizer(self):
         # define styles
+        ## comment
         self.style_COMMENT = 1
         self.editor.StyleSetSpec(self.style_COMMENT,'fore:#0000FF')
         # bind colorizer event
@@ -169,6 +230,9 @@ class Editor(wx.Frame):
     ## colorizer callback
     def onStyle(self,e):    
         lexer.input(self.editor.GetValue())
+        while True:
+            token = lexer.token()
+            if not token: break     # end of source
     
     ## toggle words window
     def toggleWords(self,e):
