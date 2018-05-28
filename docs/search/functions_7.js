@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['onbackup',['onBackup',['../classQ_1_1Editor.html#a53c3f0c36d1f4bcdf2e5098b72879b78',1,'Q::Editor']]],
-  ['onclose',['onClose',['../classQ_1_1Editor.html#ac0c16f54f85bc7b774ac73d19186b009',1,'Q::Editor']]],
-  ['onkey',['onKey',['../classQ_1_1Editor.html#a36c2400d0b992bfa0ce0946ef8bf3310',1,'Q::Editor']]],
-  ['onload',['onLoad',['../classQ_1_1Editor.html#a1c173bde8b49fc38e1bad129260377dd',1,'Q::Editor']]],
-  ['onrefresh',['onRefresh',['../classQ_1_1Editor.html#a2901e35fc5e4117b99236a45a4495b57',1,'Q::Editor']]],
-  ['onsave',['onSave',['../classQ_1_1Editor.html#ad1dab6fbb68c529ff07fecf629b2435b',1,'Q::Editor']]],
-  ['onstyle',['onStyle',['../classQ_1_1Editor.html#ac63ceff782f2ce95aad085c61dc35ff5',1,'Q::Editor']]]
+  ['onbackup',['onBackup',['../classQ_1_1Editor.html#a599aed367580fa7c7b3868a5fe2e1668',1,'Q::Editor']]],
+  ['onclose',['onClose',['../classQ_1_1Editor.html#a8458e75efd8fb98cb5a3f13eedba9b2c',1,'Q::Editor']]],
+  ['onkey',['onKey',['../classQ_1_1Editor.html#a31f062bfb13a4a1ef93c4700e311acfd',1,'Q::Editor']]],
+  ['onload',['onLoad',['../classQ_1_1Editor.html#a5e9d3b1d82f0cb11e0c96ca6da1d3908',1,'Q::Editor']]],
+  ['onrefresh',['onRefresh',['../classQ_1_1Editor.html#a5333c23fa6b634ac6db25f44505f67d2',1,'Q::Editor']]],
+  ['onsave',['onSave',['../classQ_1_1Editor.html#a57bf55d019cca3f11a21376d686930ec',1,'Q::Editor']]],
+  ['onstyle',['onStyle',['../classQ_1_1Editor.html#a21c974cb90c6ab7253f890804d40da99',1,'Q::Editor']]]
 ];

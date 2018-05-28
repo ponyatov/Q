@@ -1,0 +1,47 @@
+/**
+
+@page pls qToys: Programming Learning System
+@brief Experiment on special programming learning language design
+
+https://www.quora.com/Why-do-colleges-still-teach-C-and-C++-when-you-cant-even-build-anything-with-these-programming-languages/answer/Dmitry-Ponyatov
+
+Yes, really, _C(++) is really wrong selection as the first language_ 
+to learn programming. It has prolix syntax, pointers, hard typing, and no 
+tools to be comfortable for learning purposes. **Learning system _must_ have 
+visualization tools** to show a student what happens in his code. And I never 
+hear about such a system
+(<a href="http://en.wikipedia.org/wiki/Etoys_(programming_language)">etoys</a>
+maybe, but it’s an orthodoxal SmallTalk). 
+If you are forced with C, I’ll recommend using
+<a href="http://www.youtube.com/watch?v=cKQ1qdo79As">ddd</a>
+under Linux — you have 
+a chance to see what happens in your program.
+
+The better teaching system must use some dynamic language (Python is good,
+as it also forces to structure code by its syntax). SmallTalk wanna be a
+good candidate being expanded with some set of classes and tools specially
+designed for learning, but its community look like does not do any effort
+to promote it in this role.
+
+Here you can find some thinks about making such a system inside of Qbject,
+being portable via fork process and cross-platform backends.
+It is not ready to use systems, only experiments and sketches over @ref GameDev. 
+
+## It should not be kid-targeted as original eToys
+
+Just because the niche is already filled with Toys and Scratch.
+They looks fun for the first look but repels **the most interesting target 
+audience -- older schoolchildren and students**, as they are creative and _able 
+to learn by himself_ to force the system to progress as a full-functional 
+development environment still staying very friendly to beginners.
+
+## Multiplatformance is critical
+
+It looks very hard to achieve transparent compatibility between:
+- notebooks and desktops with Windows/Linux/MacOS
+- tablets
+- mobile phones (Android/iOS) _are topmost for mobile learning_
+- cloud system with Internet interface
+
+
+*/

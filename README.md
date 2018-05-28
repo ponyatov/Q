@@ -12,5 +12,6 @@ github: https://github.com/ponyatov/Q
 * script languages: Python FORTH SmallTalk
 * DB: (hyper)graph object knowledge database
 * AI: Mynsky frames semantic hypergraph inference system
-* metaprogramming and managed compilation:
+* metaprogramming and managed compilation
+* @ref pls for learning via @ref GameDev
 

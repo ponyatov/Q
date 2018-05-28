@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['dot',['dot',['../group__debug.html#ga4fbbf5cc1ca90a9aadf6e1b405e75af5',1,'Q']]],
-  ['dropall',['dropall',['../classQ_1_1Stack.html#a380357f190ce3ff0ad6968e4df073030',1,'Q::Stack']]],
-  ['dump',['dump',['../classQ_1_1Qbject.html#a8fc8789192237327621bf5ee46158c06',1,'Q::Qbject']]]
+  ['dot',['dot',['../group__debug.html#gaac0292f30331308e1a96076f16dea296',1,'Q']]],
+  ['dropall',['dropall',['../classQ_1_1Stack.html#a58ffa0abaed1fc5ec3d3b83922a38f6b',1,'Q::Stack']]],
+  ['dump',['dump',['../classQ_1_1Qbject.html#af7e0bf5ceeb22043dd9c30e6740f8b53',1,'Q::Qbject']]]
 ];
