@@ -214,8 +214,7 @@ def backup(W):
 ## @param[in] NAME name of new empty vocabulary
 ## @return restored vocabulary    
 def restore(NAME='FORTH'):
-    try: F = open(IMAGE,'rb') ; W = pickle.load(F) ; F.close()
-    except IOError: W = Voc(NAME)
+    F = open(IMAGE,'rb') ; W = pickle.load(F) ; F.close()
     return W
 
 ## @}
@@ -376,8 +375,11 @@ def INTERPRET(SRC=''):
 
 ## system vocabulary
 
-W = restore('FORTH')
-W << INTERPRET
+try: W = restore('FORTH')
+except IOError:
+    W = Voc('FORTH')
+    W << WORD << FIND << INTERPRET
+    backup(W)
 
 ## @}
 
