@@ -21,7 +21,7 @@ EMAIL   = 'dponyatov@gmail.com'
 ## license
 LICENSE = 'All rights reserved'
 
-## longer project about 
+## longer project about
 ABOUT   = '''
 * OS IDE CAD/CAM/CAE RAD CAL (computer assisted learning)
 * script languages: Python FORTH SmallTalk
@@ -158,6 +158,10 @@ class Container(Qbject): pass
 class Stack(Container):
     ## `<<` operator
     def __lshift__(self,o): self.nest.append(o) ; return self
+    ## @returns top element /without removing/
+    def top(self): return self.nest[-1]
+    ## @returns top element
+    def pop(self): return self.nest.pop()
 
 ## associative array (vocabulary)
 class Voc(Container):
@@ -272,7 +276,7 @@ def t_string_string(t):
 ## `\t`abulation
 def t_string_tab(t):
     r'\\t'
-    t.lexer.lexstring += '\t' ; t.lexer.toklen += len(t.value)
+    t.lexer.lexstring += '\t' ; t.lexer.toklen += len(t.value)    
 ## carriage `\r`eturn    
 def t_string_cr(t):
     r'\\r'
@@ -351,11 +355,17 @@ def WORD():
     if token: D << token
     return token
 
+## `FIND ( wordname -- callable )` lookup definition/callable object in vocabulary
+def FIND():
+    WN = D.pop().value ; D << W[WN]
+
 ## `INTERPRET ( -- )` interpreter loop
 def INTERPRET(SRC=''):
     lexer.input(SRC)
     while True:
         if not WORD(): break    # end of source
+        if D.top().type in ['symbol','operator']:
+            FIND()
     main.onRefresh(None)
 
 ## @}
@@ -382,11 +392,16 @@ Q = Queue.Queue()
 
 ## request processing thread
 class FORTH_thread(threading.Thread):
+    def __init__(self):
+        threading.Thread.__init__(self)
+        self.stop = False
     ## loop processing
     def run(self):
-        while True: INTERPRET(Q.get())
+        while not self.stop:
+            try: INTERPRET(Q.get(timeout=1))
+            except Queue.Empty: pass
 ## singleton            
-forth_thread = FORTH_thread() ; forth_thread.start()
+forth_thread = FORTH_thread()
 
 ## @}
 
@@ -534,7 +549,7 @@ class Editor(wx.Frame):
         if stack.IsShown(): stack.editor.SetValue(D.dump())
     ## close GUI
     def onClose(self,e):
-        main.Close() ; stack.Close() ; words.Close() 
+        main.Close() ; stack.Close() ; words.Close()
     ## save callback
     def onSave(self,e):
         F = open(self.Title,'w') ; F.write(self.editor.GetValue()) ; F.close()
@@ -558,7 +573,15 @@ words = Editor(main, title = sys.argv[0] + '.words')
 
 ## @}
 
-# start GUI
-app.MainLoop()
+# start GUI in separate thread
+class GUI_thread(threading.Thread):
+    def run(self): app.MainLoop()
+gui_thread = GUI_thread() 
 
 ## @}
+
+if __name__ == '__main__':
+    forth_thread.start()
+    gui_thread.start()
+    gui_thread.join()
+    forth_thread.stop = True ; forth_thread.join()
