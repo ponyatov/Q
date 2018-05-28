@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quit',['quit',['../classQ_1_1Editor.html#a8d3c587fd4772abd6482caa84709826c',1,'Q::Editor']]]
+  ['nest',['nest',['../classQ_1_1Qbject.html#a9673f14558a7e15cdbacc688794ffda4',1,'Q::Qbject']]]
 ];

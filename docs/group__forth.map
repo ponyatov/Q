@@ -1,3 +1,5 @@
 <map id="oFORTH" name="oFORTH">
-<area shape="rect" id="node2" href="$group__parser.html" title="powered with PLY library " alt="" coords="128,5,231,32"/>
+<area shape="rect" id="node1" href="$group__queue.html" title="queue holds requests to FORTH interpreter " alt="" coords="128,5,263,32"/>
+<area shape="rect" id="node2" href="$group__interpret.html" title="Interpreter" alt="" coords="155,56,236,83"/>
+<area shape="rect" id="node4" href="$group__parser.html" title="powered with PLY library " alt="" coords="144,107,247,133"/>
 </map>

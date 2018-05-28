@@ -57,6 +57,10 @@ class Qbject:
         self.type = self.__class__.__name__.lower()
         ## single value
         self.value = V
+        ## `nest[]`ed elements /ordered/
+        self.nest = []
+        ## `attr{}`ibutes /associative array, unordered/
+        self.attr = {}
         # process lexeme data
         if token:
             ## lexeme char position in source code
@@ -68,9 +72,12 @@ class Qbject:
     ## text dump (tree form)
     def __repr__(self): return self.dump()
     ## dump any object in tree form
-    def dump(self, depth=0):
-        S = self.head()
+    def dump(self, depth=0,prefix=''):
+        S = self.pad(depth) + self.head(prefix=prefix)
+        for i in self.attr: S += self.attr[i].dump(depth+1,prefix='%s='%i)
         return S
+    ## pad tree element
+    def pad(self,N): return '\n' + '\t' * N
     ## dump object in short form (header only)
     def head(self,prefix=''):
         return '%s<%s:%s>' % (prefix,self.type, self.value)
@@ -100,8 +107,11 @@ class Container(Qbject): pass
 class Stack(Container): pass
 
 ## associative array (vocabulary)
-class Voc(Container): pass
-
+class Voc(Container):
+    def __lshift__(self,o):
+        self.attr[o.__name__] = Function(o)
+        return self
+        
 ## metaprogramming
 class Meta(Qbject): pass
 
@@ -113,6 +123,9 @@ class Operator(Meta): pass
 
 ## definition operator (compiler words)
 class DefOperator(Operator): pass
+
+## function
+class Function(Meta): pass
     
 ## @}
 
@@ -209,7 +222,7 @@ def t_operator(t):
 
 ## compiler words
 def t_defopeator(t):
-    r'[\[\]\,\:\;]'
+    r'[\[\]\,\:\;\=]'
     return DefOperator(t.value, token=t)
 
 ## symbol
@@ -223,6 +236,35 @@ def t_error(t): raise SyntaxError(t)
 ## FORTH lexer
 ## @todo use stack to allow `.inc` directive
 lexer = lex.lex()
+
+## @}
+
+## @defgroup interpret Interpreter
+## @{
+
+## `INTERPRET ( -- )` interpreter loop
+def INTERPRET(SRC=''):
+    print SRC
+W << INTERPRET
+
+## @}
+
+## @defgroup queue IDE/FORTH queue
+## @brief queue holds requests to FORTH interpreter
+## @{
+
+import threading,Queue
+
+## queue holds requests to FORTH interpreter
+Q = Queue.Queue()
+
+## request processing thread
+class FORTH_thread(threading.Thread):
+    ## loop processing
+    def run(self):
+        while True: INTERPRET(Q.get())
+## singleton            
+forth_thread = FORTH_thread() ; forth_thread.start()
 
 ## @}
 
@@ -301,11 +343,14 @@ class Editor(wx.Frame):
         ## editor
         self.editor = wx.stc.StyledTextCtrl(self)
         ## set default styling in editor
+        self.editor.SetTabWidth(4)
         self.editor.StyleSetSpec(wx.stc.STC_STYLE_DEFAULT,
                         'face:%s,size:%s' % (font.FaceName, font.PointSize))
         self.initColorizer()
         # load default file
         self.onLoad(None)
+        # bind keys
+        self.editor.Bind(wx.EVT_CHAR, self.onKey)
     ## initialize colorizer
     def initColorizer(self):
         # define styles
@@ -340,6 +385,13 @@ class Editor(wx.Frame):
                 self.editor.SetStyling(token.toklen,self.style_NUMBER)
             else:
                 self.editor.SetStyling(0,0)
+                
+    ## key press callback
+    def onKey(self,e):
+        char = e.GetKeyCode() ; ctrl = e.CmdDown() ; shift = e.ShiftDown()
+        if char == 0x0D and ctrl or shift:
+            Q.put(self.editor.GetSelectedText())
+        else: e.Skip()
     
     ## toggle words window
     def toggleWords(self,e):

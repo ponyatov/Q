@@ -114,6 +114,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1DefOperator.html">Q.DefOperator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">definition operator (compiler words)  <a href="classQ_1_1DefOperator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1FORTH__thread.html">Q.FORTH_thread</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">request processing thread  <a href="classQ_1_1FORTH__thread.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQ_1_1Editor.html">Q.Editor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">text editor window  <a href="classQ_1_1Editor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,6 +169,10 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga63651177d802dd192c2958565104ff7c">Q.t_error</a> (t)</td></tr>
 <tr class="memdesc:ga63651177d802dd192c2958565104ff7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">required lexer error callback <br /></td></tr>
 <tr class="separator:ga63651177d802dd192c2958565104ff7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad31b990f32f53efe23077be0bd057a04"><td class="memItemLeft" align="right" valign="top">
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__interpret.html#gad31b990f32f53efe23077be0bd057a04">Q.INTERPRET</a> (SRC='')</td></tr>
+<tr class="memdesc:gad31b990f32f53efe23077be0bd057a04"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>INTERPRET ( -- )</code> interpreter loop <br /></td></tr>
+<tr class="separator:gad31b990f32f53efe23077be0bd057a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -221,6 +228,14 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 <tr class="memitem:ga8a621337488165e2a7fa06b70b0ba7dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga8a621337488165e2a7fa06b70b0ba7dc">Q.lexer</a> = lex.lex()</td></tr>
 <tr class="memdesc:ga8a621337488165e2a7fa06b70b0ba7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">FORTH lexer.  <a href="group__parser.html#ga8a621337488165e2a7fa06b70b0ba7dc">More...</a><br /></td></tr>
 <tr class="separator:ga8a621337488165e2a7fa06b70b0ba7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga547d8490204007cd7687931415008da4"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__queue.html#ga547d8490204007cd7687931415008da4">Q.Q</a> = Queue.Queue()</td></tr>
+<tr class="memdesc:ga547d8490204007cd7687931415008da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">queue holds requests to FORTH interpreter <br /></td></tr>
+<tr class="separator:ga547d8490204007cd7687931415008da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga610067988c72736afd9e5cc4e6bc73a6"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__queue.html#ga610067988c72736afd9e5cc4e6bc73a6">Q.forth_thread</a> = FORTH_thread() ; forth_thread.start()</td></tr>
+<tr class="memdesc:ga610067988c72736afd9e5cc4e6bc73a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">singleton <br /></td></tr>
+<tr class="separator:ga610067988c72736afd9e5cc4e6bc73a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga373412b6390da67607655c11bcec77a4"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gui.html#ga373412b6390da67607655c11bcec77a4">Q.app</a> = wx.App()</td></tr>
 <tr class="memdesc:ga373412b6390da67607655c11bcec77a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">wxApplication <br /></td></tr>
@@ -250,7 +265,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 28 2018 13:41:07 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 28 2018 14:17:39 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
