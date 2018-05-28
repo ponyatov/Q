@@ -244,7 +244,8 @@ D = Stack('DATA')
 ## @defgroup debug Debug
 ## @{
 
-## `. = DROPALL ( ... -- )` clean interpreter state in every code logic block
+## @brief clean interpreter state in every code logic block `= DROPALL` 
+## @details drop data stack
 def dot(): D.dropall()
 
 ## @}
