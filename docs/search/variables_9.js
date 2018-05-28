@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['readme',['README',['../group__meta.html#ga79014de61338491cd87643f9b1ab43c3',1,'Q']]],
-  ['refresh',['refresh',['../classQ_1_1Editor.html#ab6da45a41ff743710189ab75cf967fab',1,'Q::Editor']]]
+  ['main',['main',['../group__editor.html#gad80cfeec4072187513b8f258c2ac78ea',1,'Q']]],
+  ['menu',['menu',['../classQ_1_1Editor.html#a6b2916a42e4812ca3d8b868331476104',1,'Q::Editor']]],
+  ['module',['MODULE',['../group__meta.html#ga932db1df5a9bfe85cdd5e35e2b337f51',1,'Q']]]
 ];

@@ -1,6 +1,9 @@
 ## @file
 ## @brief Qbject Virtual Machine (Python implementation)
 
+# need for sys.argv command line parameters and support file naming
+import sys
+
 ## @defgroup meta Metainformation
 ## @brief Project info
 ## @{
@@ -25,7 +28,7 @@ ABOUT   = '''
 * DB: (hyper)graph object knowledge database
 * AI: Mynsky frames semantic hypergraph inference system
 * metaprogramming and managed compilation:
-'''
+''' 
 
 ## README.md
 README = '''
@@ -101,6 +104,29 @@ class DefOperator(Operator): pass
     
 ## @}
 
+## @defgroup persist persistent storage
+## @brief store system state in `.image` file
+## @{ 
+
+import pickle
+
+## image file name
+IMAGE = sys.argv[0] + '.image'
+
+## backup to `.image`
+## @param[in] W object to backup (vocabulary)
+def backup(W):
+    F = open(IMAGE,'wb') ; pickle.dump(W,F) ; F.close()
+## restore from `.image`
+## @param[in] NAME name of new empty vocabulary
+## @return restored vocabulary    
+def restore(NAME='FORTH'):
+    try: F = open(IMAGE,'rb') ; W = pickle.load(F) ; F.close()
+    except IOError: W = Voc(NAME)
+    return W
+
+## @}
+
 ## @defgroup forth oFORTH
 ## @brief object FORTH interpreter
 ## @{
@@ -109,7 +135,8 @@ class DefOperator(Operator): pass
 S = Stack('DATA')
 
 ## system vocabulary
-W = Voc('FORTH')
+
+W = restore('FORTH')
 
 ## @defgroup parser Syntax parser
 ## @brief powered with
@@ -168,9 +195,6 @@ lexer = lex.lex()
 
 ## @}
 
-# need for sys.argv command line parameters
-import sys
-
 ## @defgroup gui GUI
 ## `wxPython` wrappers and microIDE
 ## @{
@@ -213,6 +237,10 @@ class Editor(wx.Frame):
         self.file = wx.Menu() ; self.menu.Append(self.file, '&File')
         ## file/save
         self.save = self.file.Append(wx.ID_SAVE, '&Save')
+        self.Bind(wx.EVT_MENU,self.onSave,self.save)
+        ## file/backup
+        self.backup = self.file.Append(wx.ID_APPLY,'&Backup\tCtrl+E')
+        self.Bind(wx.EVT_MENU, self.onBackup, self.backup)
         ## file/quit
         self.quit = self.file.Append(wx.ID_EXIT, '&Quit')
         self.Bind(wx.EVT_MENU, self.onClose, self.quit)
@@ -223,10 +251,10 @@ class Editor(wx.Frame):
         self.refresh = self.debug.Append(wx.ID_REFRESH,'&Refresh\tF12')
         self.Bind(wx.EVT_MENU, self.onRefresh, self.refresh)
         ## debug/vocabulary
-        self.words = self.debug.Append(wx.ID_ANY,'&Vocabulary\tF9',kind=wx.ITEM_CHECK)
+        self.words = self.debug.Append(wx.ID_ANY,'&Vocabulary\tF8',kind=wx.ITEM_CHECK)
         self.Bind(wx.EVT_MENU, self.toggleWords, self.words)
         ## debug/stack
-        self.stack = self.debug.Append(wx.ID_ANY,'&Stack\tF8',kind=wx.ITEM_CHECK)
+        self.stack = self.debug.Append(wx.ID_ANY,'&Stack\tF9',kind=wx.ITEM_CHECK)
         self.Bind(wx.EVT_MENU, self.toggleStack, self.stack)
 
         ## help
@@ -288,6 +316,11 @@ class Editor(wx.Frame):
     ## close GUI
     def onClose(self,e):
         main.Close() ; stack.Close() ; words.Close() 
+    ## save callback
+    def onSave(self,e):
+        F = open(self.Title,'w') ; F.write(self.editor.GetValue()) ; F.close()
+    ## backup (hybernation)
+    def onBackup(self,e): backup(W)
 
 ## main window
 main = Editor(None, title = sys.argv[0] + '.src') ; main.Show()

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['onclose',['onClose',['../classQ_1_1Editor.html#ac0c16f54f85bc7b774ac73d19186b009',1,'Q::Editor']]],
-  ['onrefresh',['onRefresh',['../classQ_1_1Editor.html#a2901e35fc5e4117b99236a45a4495b57',1,'Q::Editor']]],
-  ['onstyle',['onStyle',['../classQ_1_1Editor.html#ac63ceff782f2ce95aad085c61dc35ff5',1,'Q::Editor']]]
+  ['initcolorizer',['initColorizer',['../classQ_1_1Editor.html#acfa3bb69a3642efbe5437f54415c045d',1,'Q::Editor']]],
+  ['initeditor',['initEditor',['../classQ_1_1Editor.html#ad44cd97ff85152e1f905eae22d7ef83e',1,'Q::Editor']]],
+  ['initmenu',['initMenu',['../classQ_1_1Editor.html#a884111a773c141903b311a7100d695bd',1,'Q::Editor']]]
 ];

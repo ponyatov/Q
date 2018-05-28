@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['debug',['debug',['../classQ_1_1Editor.html#ad13eeb70208cb67f7afb579fb58433bf',1,'Q::Editor']]],
-  ['defoperator',['DefOperator',['../classQ_1_1DefOperator.html',1,'Q']]],
-  ['display',['displaY',['../group__gui.html#gace770be7f3c532a0826e5be00e5aa4a4',1,'Q']]],
-  ['dump',['dump',['../classQ_1_1Qbject.html#a17b0fe36e271395176249b090b5f5fca',1,'Q::Qbject']]]
+  ['comment',['Comment',['../classQ_1_1Comment.html',1,'Q']]],
+  ['container',['Container',['../classQ_1_1Container.html',1,'Q']]]
 ];

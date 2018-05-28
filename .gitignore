@@ -4,3 +4,5 @@
 *.log
 *.pyc
 doxygen_sqlite3.db
+Q.py.stack
+Q.py.words

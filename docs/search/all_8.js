@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['ide_2ftext_20editor',['IDE/Text editor',['../group__editor.html',1,'']]],
-  ['initcolorizer',['initColorizer',['../classQ_1_1Editor.html#acfa3bb69a3642efbe5437f54415c045d',1,'Q::Editor']]],
-  ['initeditor',['initEditor',['../classQ_1_1Editor.html#ad44cd97ff85152e1f905eae22d7ef83e',1,'Q::Editor']]],
-  ['initmenu',['initMenu',['../classQ_1_1Editor.html#a884111a773c141903b311a7100d695bd',1,'Q::Editor']]]
+  ['head',['head',['../classQ_1_1Qbject.html#a14e9b9b15a5c1ad2dab0eacae182bbfb',1,'Q::Qbject']]],
+  ['help',['help',['../classQ_1_1Editor.html#ab06338d8a7883a6325c42b9efaa0b4df',1,'Q::Editor']]]
 ];

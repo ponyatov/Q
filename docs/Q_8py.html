@@ -108,6 +108,12 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gab532bca7a8ebb8aceb9ceb33f242aa81"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__persist.html#gab532bca7a8ebb8aceb9ceb33f242aa81">Q.backup</a> (W)</td></tr>
+<tr class="memdesc:gab532bca7a8ebb8aceb9ceb33f242aa81"><td class="mdescLeft">&#160;</td><td class="mdescRight">backup to <code>.image</code>  <a href="group__persist.html#gab532bca7a8ebb8aceb9ceb33f242aa81">More...</a><br /></td></tr>
+<tr class="separator:gab532bca7a8ebb8aceb9ceb33f242aa81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7d5b91fb2f0016b2f184b7f95cd3e62"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__persist.html#gab7d5b91fb2f0016b2f184b7f95cd3e62">Q.restore</a> (NAME='FORTH')</td></tr>
+<tr class="memdesc:gab7d5b91fb2f0016b2f184b7f95cd3e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">restore from <code>.image</code>  <a href="group__persist.html#gab7d5b91fb2f0016b2f184b7f95cd3e62">More...</a><br /></td></tr>
+<tr class="separator:gab7d5b91fb2f0016b2f184b7f95cd3e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4b571fe4d1c5eba03cc450ea05b2efc3"><td class="memItemLeft" align="right" valign="top">
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga4b571fe4d1c5eba03cc450ea05b2efc3">Q.t_newline</a> (t)</td></tr>
 <tr class="memdesc:ga4b571fe4d1c5eba03cc450ea05b2efc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">line counter <br /></td></tr>
@@ -165,14 +171,18 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 <tr class="memitem:ga79014de61338491cd87643f9b1ab43c3"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__meta.html#ga79014de61338491cd87643f9b1ab43c3">Q.README</a></td></tr>
 <tr class="memdesc:ga79014de61338491cd87643f9b1ab43c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">README.md.  <a href="group__meta.html#ga79014de61338491cd87643f9b1ab43c3">More...</a><br /></td></tr>
 <tr class="separator:ga79014de61338491cd87643f9b1ab43c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56012b703c69f74734fed7254eb2158e"><td class="memItemLeft" align="right" valign="top">
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__persist.html#ga56012b703c69f74734fed7254eb2158e">Q.IMAGE</a> = sys.argv[0] + '.image'</td></tr>
+<tr class="memdesc:ga56012b703c69f74734fed7254eb2158e"><td class="mdescLeft">&#160;</td><td class="mdescRight">image file name <br /></td></tr>
+<tr class="separator:ga56012b703c69f74734fed7254eb2158e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8160678ba6ad2dd6ce211beca500f9f4"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__forth.html#ga8160678ba6ad2dd6ce211beca500f9f4">Q.S</a> = Stack('DATA')</td></tr>
 <tr class="memdesc:ga8160678ba6ad2dd6ce211beca500f9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">data stack <br /></td></tr>
 <tr class="separator:ga8160678ba6ad2dd6ce211beca500f9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3badccbe684b32c268386e85270e77d6"><td class="memItemLeft" align="right" valign="top">
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__forth.html#ga3badccbe684b32c268386e85270e77d6">Q.W</a> = Voc('FORTH')</td></tr>
-<tr class="memdesc:ga3badccbe684b32c268386e85270e77d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">system vocabulary <br /></td></tr>
-<tr class="separator:ga3badccbe684b32c268386e85270e77d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb31e5d4be9f35f0d9cac6e7c8c11fff"><td class="memItemLeft" align="right" valign="top">
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__forth.html#gacb31e5d4be9f35f0d9cac6e7c8c11fff">Q.W</a> = restore('FORTH')</td></tr>
+<tr class="memdesc:gacb31e5d4be9f35f0d9cac6e7c8c11fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">system vocabulary <br /></td></tr>
+<tr class="separator:gacb31e5d4be9f35f0d9cac6e7c8c11fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad543af2f416d960477d9f861cccb6b31"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#gad543af2f416d960477d9f861cccb6b31">Q.tokens</a> = ['comment','operator','defoperator','symbol']</td></tr>
 <tr class="memdesc:gad543af2f416d960477d9f861cccb6b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">token types binded with <a class="el" href="group__qbject.html">Qbject class tree</a>  <a href="group__parser.html#gad543af2f416d960477d9f861cccb6b31">More...</a><br /></td></tr>
 <tr class="separator:gad543af2f416d960477d9f861cccb6b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,7 +222,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 28 2018 10:17:46 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 28 2018 11:48:44 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
