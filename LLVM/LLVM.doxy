@@ -9,7 +9,7 @@
 - embedded Linux (Buildroot/OpenWrt)
 - and other strange MCUs not supported by GCC
 
-# Installation (`$HOST` only)
+# Installation
 
 ```
 $ sudo apt install build-essentials cmake 
