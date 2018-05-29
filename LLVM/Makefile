@@ -9,7 +9,7 @@ L += $(shell llvm-config --libs core ) -ltinfo
 #--system-libs
 
 CXXFLAGS += $(shell python-config --includes)
-CXXFLAGS += -shared -fPIC 
+CXXFLAGS += -shared -fPIC
 
 %.so: %.cpp Makefile
 	$(CXX) $(CXXFLAGS) -o $@ $< $(L)
