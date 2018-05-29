@@ -12,7 +12,7 @@
 # Installation
 
 ```
-$ sudo apt install build-essentials cmake 
+$ sudo apt install build-essentials cmake libboost-python-dev
 ```
 ```
 $ mkdir ~/LLVM ; cd ~/LLVM

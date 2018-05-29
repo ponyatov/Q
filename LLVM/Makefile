@@ -1,18 +1,16 @@
-test: hello.so ll.so
+test: LL.so
 	python test.py
 
 CXX		?= g++
 OBJDUMP	?= objdump 
 
-# Py2 flags
-PYFLAGS = $(shell python-config --cflags)
-# C only
-PYFLAGS := $(subst -Wstrict-prototypes,,$(PYFLAGS))
+L += -lboost_python
+L += $(shell llvm-config --libs core ) -ltinfo
+#--system-libs
 
-## LLVM flags
-#LLFLAGS = $(shell llvm-config --cxxflags)
+CXXFLAGS += $(shell python-config --includes)
+CXXFLAGS += -shared -fPIC 
 
-CXXFLAGS += $(PYFLAGS) $(LLFLAGS) -g0
 %.so: %.cpp Makefile
-	$(CXX) $(CXXFLAGS) -shared -fPIC -o $@ $< 
+	$(CXX) $(CXXFLAGS) -o $@ $< $(L)
 	$(OBJDUMP) -x $@ > $@.objdump
