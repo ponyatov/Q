@@ -9,7 +9,9 @@ print LL.Hello
 print
 
 print LL.Module, LL.Module.__dict__
-# print LL.Module('Hello','arm-none-eabi') # will make directory with files
+
+module = LL.Module('Hello','arm-none-eabi') # can make directory with files 
+print module
 
 print
 print LL.Type
@@ -26,3 +28,9 @@ i16 = LL.Int(0x10); print 'i16',i16
 i32 = LL.Int(0x20); print 'i32',i32
 
 print LL.Int(17)
+print
+
+print LL.Void
+void = LL.Void() ; print 'void',void
+
+print module

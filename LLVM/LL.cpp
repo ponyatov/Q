@@ -31,21 +31,25 @@ struct llModule {
 		module = LLVMModuleCreateWithName(value.c_str());
 		builder = LLVMCreateBuilder();
 		LLVMSetTarget(module, triplet.c_str());
-		// make module directory
-		mkdir(value.c_str(),S_IRWXU);
-		// create Makefile for module compile
-		mk = fopen((value+"/Makefile").c_str(),"w");
-		fprintf(mk,"%s.S: %s.bc\n\tllc -o $@ $<\n",value.c_str(),value.c_str());
-		fflush(mk);
-		// create bitcode source file
-		bc = fopen((value+"/"+value+".bc").c_str(),"w");
+		#ifdef _LL_MKDIR
+			// make module directory
+			mkdir(value.c_str(),S_IRWXU);
+			// create Makefile for module compile
+			mk = fopen((value+"/Makefile").c_str(),"w");
+			fprintf(mk,"%s.S: %s.bc\n\tllc -o $@ $<\n",value.c_str(),value.c_str());
+			fflush(mk);
+			// create bitcode source file
+			bc = fopen((value+"/"+value+".bc").c_str(),"w");
+		#endif // _LL_MKDIR
 	}
 	/// cleanup module
 	~llModule() {
 		LLVMDisposeModule(module);
-		fclose(mk);
-		fprintf(bc,LLVMPrintModuleToString(module));
-		fclose(bc);
+		#ifdef _LL_MKDIR
+			fclose(mk);
+			fprintf(bc,LLVMPrintModuleToString(module));
+			fclose(bc);
+		#endif // _LL_MKDIR
 	}
 
 	/// print print string representation
@@ -88,6 +92,11 @@ struct llType {
 	LLVMTypeRef lltype;
 	/// type size requested in bits
 	uint8_t size;
+};
+
+struct llVoid:llType {
+	llVoid() { size=0; }
+	std::string __repr__() { return "<type:void>"; }
 };
 
 /// integer number type
@@ -133,6 +142,10 @@ BOOST_PYTHON_MODULE( LL )
     ;
 
     class_<llType>("Type");
+
+    class_<llVoid>("Void", init<>())
+		.def("__repr__",&llVoid::__repr__)
+    ;
 
     class_<llInt>("Int", init<uint8_t>( args("size") ))
 		.def("__repr__",&llInt::__repr__)
