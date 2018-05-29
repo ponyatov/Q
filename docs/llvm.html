@@ -70,8 +70,8 @@ $(function() {
 <li>and other strange MCUs not supported by GCC</li>
 </ul>
 </dd></dl>
-<h1>Installation (<code>$HOST</code> only)</h1>
-<div class="fragment"><div class="line">$ sudo apt install build-essentials cmake </div></div><!-- fragment --> <div class="fragment"><div class="line">$ mkdir ~/LLVM ; cd ~/LLVM</div><div class="line">$ mkdir gz ; cd gz</div></div><!-- fragment --><h2>sources</h2>
+<h1>Installation</h1>
+<div class="fragment"><div class="line">$ sudo apt install build-essentials cmake libboost-python-dev</div></div><!-- fragment --> <div class="fragment"><div class="line">$ mkdir ~/LLVM ; cd ~/LLVM</div><div class="line">$ mkdir gz ; cd gz</div></div><!-- fragment --><h2>sources</h2>
 <div class="fragment"><div class="line">$ wget -c \</div></div><!-- fragment --><h3>required</h3>
 <ul>
 <li><code>llvm</code> <a href="http://releases.llvm.org/6.0.0/llvm-6.0.0.src.tar.xz">http://releases.llvm.org/6.0.0/llvm-6.0.0.src.tar.xz</a></li>
@@ -102,7 +102,7 @@ $(function() {
 <div class="fragment"><div class="line">    -DLLVM_DEFAULT_TARGET_TRIPLE=arm-none-eabi \</div><div class="line">    -DCMAKE_INSTALL_PREFIX=/usr/local \</div><div class="line">    -DCMAKE_INSTALL_PREFIX=$(HOME)/LLVM</div><div class="line">-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/LLVM </div><div class="line">-DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_FLAGS=<span class="stringliteral">&quot;-O0 -g&quot;</span> -DCMAKE_CXX_FLAGS=<span class="stringliteral">&quot;-O0 -g&quot;</span></div><div class="line">-DCMAKE_INSTALL_PREFIX=$(HOME)/LLVM/AVR</div></div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 29 2018 10:45:50 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 29 2018 13:20:32 for Qbject system by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
