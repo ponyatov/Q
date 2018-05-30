@@ -3,6 +3,7 @@ CFLAGS += -O0 -g -ffunction-sections
 LIB += lib/libSTM32.a
 
 OBJ	+= lib/startup_stm32f051x8.o lib/system_stm32f0xx.o
+OBJ	+= lib/startup_stm32l073xx.o lib/system_stm32l0xx.o
 
 S	+= src/startup_stm32f051x8.s src/startup_stm32l073xx.s
 C	+= src/system_stm32f0xx.c 	 src/system_stm32l0xx.c
@@ -10,9 +11,9 @@ C	+= src/system_stm32f0xx.c 	 src/system_stm32l0xx.c
 H	+= include/system_stm32f0xx.h include/system_stm32l0xx.h
 H	+= include/stm32f0xx.h		  include/stm32l0xx.h
 
-H	+= include/stm32f051x8.h
+H	+= include/stm32f051x8.h	  include/stm32l073xx.h
 
-H	+= include/core_cm0.h include/cmsis_gcc.h
+H	+= include/core_cm0.h include/core_cm0plus.h include/cmsis_gcc.h
 H	+= include/core_cmInstr.h include/core_cmFunc.h
 
 LDS	+= lib/STM32L073VZTx_FLASH.ld lib/STM32L051R8_FLASH.ld
