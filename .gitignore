@@ -2,6 +2,7 @@
 *.swp
 *.o
 *.so
+*.elf
 *.objdump
 *.exe
 *.log
