@@ -754,7 +754,7 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = README.md Q.py \
-						C89/C89.doxy CMSIS/CMSIS.doxy \
+						C89/C89.doxy CMSIS/CMSIS.doxy CMSIS/STM32/STM32.doxy \
 						LLVM/LLVM.doxy LLVM/LL.cpp \
 						Game/Dev.doxy Game/Learn.doxy 
 

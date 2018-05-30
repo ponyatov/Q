@@ -1,0 +1,45 @@
+/**
+
+@defgroup stm32 STM32
+@ingroup cmsis
+@brief STM32 family support
+
+@page STM32 CMSIS/STM32
+@brief STM32 family support
+
+@section stm32cube CUBE-based support libraies:
+
+- `/CMSIS/STM32/en.stm32cubef0.zip` (@ref STM32F051R8) Cortex-M0+
+
+  - STM32Cube_FW_F0_V1.9.0/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f051x8.s
+  
+- /CMSIS/STM32/en.stm32cubel0.zip (@ref STM32F073VZ) Cortex-M0+
+
+  - STM32Cube_FW_L0_V1.10.0/Drivers/CMSIS/Device/ST/STM32L0xx/Source/Templates/gcc/startup_stm32l073xx.s
+
+@section stm32devices supported devices
+
+@subsection STM32F051R8 STM32F051R8 (f0discovery)
+
+- F0: Cortex-M0 48Mhz
+- R: 64 pins
+- 8: 64K Flash
+- T: LQFP 
+- 6: -40..+85 C
+- 8K SRAM
+
+![](http://shop.myavr.com/pic/galerie/stm32-f0-disc.png) 
+
+@subsection STM32F073VZ STM32F073VZ (AcSip S76 module)
+
+@see <a href="http://www.acsip.com.tw/index.php?action=products-detail&fid1=19&fid2=&fid3=&id=79">AcSip S76</a> module: with @ref SX1276
+
+- L0: Cortex-M0+
+- Z: 192K Flash
+- 20K SRAM
+
+@subsubsection SX1276 Semtech SX1276 LoRaWAN RF transmitter
+
+![S76](https://cdn.techship.com/uploads/images/783/eks76sxb_1_thumb_w256.1523022924.png)
+
+*/

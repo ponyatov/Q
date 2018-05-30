@@ -3,7 +3,10 @@
 @page CMSIS CMSIS integration
 @brief Cortex-M microcontrollers support (embedded/IoT) 
 
+@see @ref STM32
+
 @defgroup cmsis CMSIS
 @brief Cortex-M microcontrollers support (embedded/IoT) 
+
 
 */

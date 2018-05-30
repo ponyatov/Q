@@ -1,4 +1,5 @@
 <map id="CMSIS" name="CMSIS">
 <area shape="rect" id="node1" href="$group__c89.html" title="ANSI C backend for embedded targets. " alt="" coords="119,5,217,32"/>
 <area shape="rect" id="node3" href="$group__ll.html" title="LLVM/Python wrapper. " alt="" coords="140,56,196,83"/>
+<area shape="rect" id="node4" href="$group__stm32.html" title="STM32 family support. " alt="" coords="136,107,200,133"/>
 </map>
