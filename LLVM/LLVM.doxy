@@ -1,7 +1,7 @@
 /**
 
-@page llvm LLVM/Clang backend integration
-@brief C89 backend for embedded targets
+@page llvm LLVM backend integration
+@brief Low-level backend
 
 @todo
 - AVR8

@@ -1,6 +1,7 @@
 /// @file
 /// @brief LLVM/Python wrapper
 /// @defgroup ll LLVM
+/// @ingroup cmsis
 /// @brief LLVM/Python wrapper
 /// @{
 
@@ -94,8 +95,10 @@ struct llType {
 	uint8_t size;
 };
 
+/// Void type
 struct llVoid:llType {
 	llVoid() { size=0; }
+	/// print <type:void>
 	std::string __repr__() { return "<type:void>"; }
 };
 

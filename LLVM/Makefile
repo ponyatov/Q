@@ -1,3 +1,6 @@
+bitstruct.ll: bitstruct.c
+	clang -S -emit-llvm $<
+
 test: LL.so
 	python test.py
 
