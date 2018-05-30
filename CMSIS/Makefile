@@ -1,7 +1,7 @@
 CC		= arm-none-eabi-gcc
 OBJDUMP	= arm-none-eabi-objdump
 
-CFLAGS	+= -O0 -g -ffunction-sections -I$(CURDIR)/include
+CFLAGS	+= -Os -g -ffunction-sections -fdata-sections -I$(CURDIR)/include/STM32
 CFLAGS	+= -march=armv6-m -mcpu=cortex-m0 -mthumb -D STM32F051x8
 LDFLAGS	+= -Wl,--gc-sections -Wl,-T,lib/STM32L051R8_FLASH.ld -L$(CURDIR)/lib
 
@@ -10,16 +10,17 @@ LIB += lib/libSTM32.a
 OBJ	+= lib/startup_stm32f051x8.o lib/system_stm32f0xx.o
 OBJ	+= lib/startup_stm32l073xx.o lib/system_stm32l0xx.o
 
-S	+= src/startup_stm32f051x8.s src/startup_stm32l073xx.s
-C	+= src/system_stm32f0xx.c 	 src/system_stm32l0xx.c
+S	+= src/STM32/startup_stm32f051x8.s	src/STM32/startup_stm32l073xx.s
+C	+= src/STM32/system_stm32f0xx.c		src/STM32/system_stm32l0xx.c
 
-H	+= include/system_stm32f0xx.h include/system_stm32l0xx.h
-H	+= include/stm32f0xx.h		  include/stm32l0xx.h
+H	+= include/STM32/system_stm32f0xx.h	include/STM32/system_stm32l0xx.h
+H	+= include/STM32/stm32f0xx.h		include/STM32/stm32l0xx.h
 
-H	+= include/stm32f051x8.h	  include/stm32l073xx.h
+H	+= include/STM32/stm32f051x8.h		include/STM32/stm32l073xx.h
 
-H	+= include/core_cm0.h include/core_cm0plus.h include/cmsis_gcc.h
-H	+= include/core_cmInstr.h include/core_cmFunc.h
+H	+= include/STM32/core_cm0.h			include/STM32/core_cm0plus.h
+H	+= include/STM32/cmsis_gcc.h
+H	+= include/STM32/core_cmInstr.h include/STM32/core_cmFunc.h
 
 LDS	+= lib/STM32L073VZTx_FLASH.ld lib/STM32L051R8_FLASH.ld
 
@@ -59,30 +60,30 @@ lib/%.ld: $(L0PRJ)/SW4STM32/STM32L073Z_EVAL/%.ld
 lib/STM32L051R8_FLASH.ld: $(DISCO)/stm32_flash.ld
 	cp $< $@
 
-src/%.s: $(F0TMPL)/gcc/%.s
+src/STM32/%.s: $(F0TMPL)/gcc/%.s
 	cp $< $@
-src/%.s: $(L0TMPL)/gcc/%.s
+src/STM32/%.s: $(L0TMPL)/gcc/%.s
 	cp $< $@
 
-src/%.c: $(F0TMPL)/%.c
+src/STM32/%.c: $(F0TMPL)/%.c
 	cp $< $@
-src/%.c: $(L0TMPL)/%.c
+src/STM32/%.c: $(L0TMPL)/%.c
 	cp $< $@
 	
-include/%.h: $(F0INCL)/%.h
+include/STM32/%.h: $(F0INCL)/%.h
 	cp $< $@
-include/%.h: $(L0INCL)/%.h
+include/STM32/%.h: $(L0INCL)/%.h
 	cp $< $@
-include/%.h: $(CMINCL)/%.h
+include/STM32/%.h: $(CMINCL)/%.h
 	cp $< $@
 
 
-lib/system_stm32f0xx.o: src/system_stm32f0xx.c 
+lib/system_stm32f0xx.o: src/STM32/system_stm32f0xx.c 
 	$(CC) $(CFLAGS) -D STM32F051x8  -c -o $@ $<
-lib/system_stm32l0xx.o: src/system_stm32l0xx.c 
+lib/system_stm32l0xx.o: src/STM32/system_stm32l0xx.c 
 	$(CC) $(CFLAGS) -D STM32L073xx -c -o $@ $<
 	
-lib/%.o: src/%.c 
+lib/%.o: src/STM32/%.c 
 	$(CC) $(CFLAGS) -c -o $@ $<
-lib/%.o: src/%.s 
+lib/%.o: src/STM32/%.s 
 	$(CC) $(CFLAGS) -c -o $@ $<
