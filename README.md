@@ -14,4 +14,6 @@ github: https://github.com/ponyatov/Q
 * AI: Mynsky frames semantic hypergraph inference system
 * metaprogramming and managed compilation
 * @ref pls for learning via @ref GameDev
-
+* embedded systems firmware development
+  * C89/LLVM backend 
+  * @ref STM32 
