@@ -1,4 +1,5 @@
 <map id="LLVM" name="LLVM">
-<area shape="rect" id="node1" href="$group__lltype.html" title="types " alt="" coords="116,5,167,32"/>
-<area shape="rect" id="node2" href="$group__llmodule.html" title="compilation module (single object file) " alt="" coords="109,56,173,83"/>
+<area shape="rect" id="node1" href="$group__lltype.html" title="types " alt="" coords="229,5,280,32"/>
+<area shape="rect" id="node2" href="$group__llmodule.html" title="compilation module (single object file) " alt="" coords="223,56,287,83"/>
+<area shape="rect" id="node3" href="$group__cmsis.html" title="Cortex&#45;M microcontrollers support (embedded/IoT) " alt="" coords="5,31,71,57"/>
 </map>

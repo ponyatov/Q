@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['q',['Q',['../index.html',1,'']]],
-  ['qtoys_3a_20programming_20learning_20system',['qToys: Programming Learning System',['../pls.html',1,'']]]
+  ['llvm_20backend_20integration',['LLVM backend integration',['../llvm.html',1,'']]]
 ];

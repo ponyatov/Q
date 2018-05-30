@@ -9,5 +9,6 @@ var searchData=
   ['llfloat',['llFloat',['../structllFloat.html',1,'llFloat'],['../structllFloat.html#a68bc76197693dc5ac6c544e688ab597e',1,'llFloat::llFloat()']]],
   ['llint',['llInt',['../structllInt.html',1,'llInt'],['../structllInt.html#a0961e15d65e0daf10bfc737c05838d66',1,'llInt::llInt()']]],
   ['llmodule',['llModule',['../structllModule.html',1,'llModule'],['../structllModule.html#a25bb36a2e58dc90b2e495fd62ce16231',1,'llModule::llModule()']]],
-  ['lltype',['llType',['../structllType.html',1,'llType'],['../structllType.html#a1f97edfaa0de4ffac195f70486ef6e0a',1,'llType::lltype()']]]
+  ['lltype',['llType',['../structllType.html',1,'llType'],['../structllType.html#a1f97edfaa0de4ffac195f70486ef6e0a',1,'llType::lltype()']]],
+  ['llvoid',['llVoid',['../structllVoid.html',1,'']]]
 ];
