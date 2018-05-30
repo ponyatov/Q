@@ -1,8 +1,9 @@
 CC		= arm-none-eabi-gcc
 OBJDUMP	= arm-none-eabi-objdump
 
-CFLAGS += -O0 -g -ffunction-sections
-CFLAGS += -I$(CURDIR)/include
+CFLAGS	+= -O0 -g -ffunction-sections -I$(CURDIR)/include
+CFLAGS	+= -march=armv6-m -mcpu=cortex-m0 -mthumb -D STM32F051x8
+LDFLAGS	+= -Wl,--gc-sections -Wl,-T,lib/STM32L051R8_FLASH.ld -L$(CURDIR)/lib
 
 LIB += lib/libSTM32.a
 
@@ -25,7 +26,10 @@ LDS	+= lib/STM32L073VZTx_FLASH.ld lib/STM32L051R8_FLASH.ld
 SRC += $(S) $(C) $(H) $(LDS)
 
 f0disco_demo.elf: src/f0disco_demo.c $(H) $(LIB) Makefile
-	$(CC) $(CFLAGS) -D STM32F051x8 -Wl,-T,lib/STM32L051R8_FLASH.ld -o $@ $< -nostdlib
+	$(CC) $(CFLAGS) \
+		$(LDFLAGS) -Wl,-Map=$@.map -o $@ \
+		lib/startup_stm32f051x8.o lib/system_stm32f0xx.o \
+		$<
 	$(OBJDUMP) -x $@ > $@.objdump
 
 lib: $(LIB)
