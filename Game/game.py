@@ -3,11 +3,27 @@ import pygame
 pygame.init()
 pygame.display.set_caption(str(sys.argv))
 
-scr = pygame.display.set_mode((240,320))
+scr = pygame.display.set_mode((480,640))
 
-while True:
+exitGame = False
+X = 480/2
+Y = 640/2
+
+BACK = (0x12, 0x34, 0x56)
+FORE = (0x98, 0x76, 0x54)
+
+while not exitGame:
+    scr.fill(BACK)
+    scr.fill(FORE, rect=[X,Y,111,111])
+    pygame.display.update()
     for e in pygame.event.get():
-        if e.type == pygame.QUIT: break
+        if e.type == pygame.QUIT: exitGame = true
+        elif e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_ESCAPE: exitGame = True
+            elif e.key == pygame.K_LEFT : X -= 11
+            elif e.key == pygame.K_RIGHT: X += 11
+        
+pygame.quit()
 
 # # win = wx.Window(form) ; form.display = win
 # # os.environ['SDL_WINDOWID'] = str(win.GetHandle())
