@@ -433,6 +433,7 @@ class FORTH_thread(threading.Thread):
         while not self.stop:
             try: INTERPRET(Q.get(timeout=1))
             except Queue.Empty: pass
+            except KeyError, err: print KeyError,err
 ## singleton            
 forth_thread = FORTH_thread()
 
