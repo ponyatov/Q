@@ -31,6 +31,7 @@ class Ani(Layer):
         Layer.__init__(self)
         sheet = pyglet.image.load('img/tetris/walk.png')
         grid = pyglet.image.ImageGrid(sheet,2,8)[0:]
+        grid = grid[8:] # reorder
         anim = pyglet.image.Animation.from_image_sequence(grid, .1, loop=True)
         spr = Sprite(anim) ; spr.position = W/2,H/2
         self.add(spr)

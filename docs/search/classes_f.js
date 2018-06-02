@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['voc',['Voc',['../classQ_1_1Voc.html',1,'Q']]]
+  ['trapezoid',['Trapezoid',['../classFuzzy_1_1Trapezoid.html',1,'Fuzzy']]]
 ];

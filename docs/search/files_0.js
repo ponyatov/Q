@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ll_2ecpp',['LL.cpp',['../LL_8cpp.html',1,'']]]
+  ['fuzzy_2epy',['Fuzzy.py',['../Fuzzy_8py.html',1,'']]]
 ];

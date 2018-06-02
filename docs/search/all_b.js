@@ -2,6 +2,7 @@ var searchData=
 [
   ['module',['Module',['../group__llmodule.html',1,'']]],
   ['main',['main',['../group__editor.html#gad80cfeec4072187513b8f258c2ac78ea',1,'Q']]],
+  ['member',['Member',['../classFuzzy_1_1Member.html',1,'Fuzzy']]],
   ['menu',['menu',['../classQ_1_1Editor.html#a6b2916a42e4812ca3d8b868331476104',1,'Q::Editor']]],
   ['meta',['Meta',['../classQ_1_1Meta.html',1,'Q.Meta'],['../group__meta.html',1,'(Global Namespace)']]],
   ['metainformation',['Metainformation',['../group__metainfo.html',1,'']]],

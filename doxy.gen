@@ -756,7 +756,8 @@ WARN_LOGFILE           =
 INPUT                  = README.md Q.py \
 						C89/C89.doxy CMSIS/CMSIS.doxy CMSIS/STM32/STM32.doxy \
 						LLVM/LLVM.doxy LLVM/LL.cpp \
-						Game/Dev.doxy Game/Learn.doxy 
+						Game/Dev.doxy Game/Learn.doxy \
+						Fuzzy/Fuzzy.doxy Fuzzy/Fuzzy.py Fuzzy/Qbject.py
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses

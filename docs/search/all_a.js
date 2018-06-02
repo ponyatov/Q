@@ -1,9 +1,9 @@
 var searchData=
 [
   ['lexer',['lexer',['../group__parser.html#ga8a621337488165e2a7fa06b70b0ba7dc',1,'Q']]],
-  ['lexpos',['lexpos',['../classQ_1_1Qbject.html#a1012363daa6f57f76eab4f43da07b93f',1,'Q::Qbject']]],
+  ['lexpos',['lexpos',['../classQ_1_1Qbject.html#a1012363daa6f57f76eab4f43da07b93f',1,'Q.Qbject.lexpos()'],['../classQbject_1_1Qbject.html#af3e2a30cb5429398e36fa5a5f1b9c3b7',1,'Qbject.Qbject.lexpos()']]],
   ['license',['LICENSE',['../group__metainfo.html#ga5b111efebdf93c89c1de1e38b2c3aedf',1,'Q']]],
-  ['lineno',['lineno',['../classQ_1_1Qbject.html#af115b84b7dc07d3da0a2239833e031cf',1,'Q::Qbject']]],
+  ['lineno',['lineno',['../classQ_1_1Qbject.html#af115b84b7dc07d3da0a2239833e031cf',1,'Q.Qbject.lineno()'],['../classQbject_1_1Qbject.html#a4a983c015269a44acd7971cd38072080',1,'Qbject.Qbject.lineno()']]],
   ['llvm',['LLVM',['../group__ll.html',1,'(Global Namespace)'],['../llvm.html',1,'(Global Namespace)']]],
   ['ll_2ecpp',['LL.cpp',['../LL_8cpp.html',1,'']]],
   ['llfloat',['llFloat',['../structllFloat.html',1,'llFloat'],['../structllFloat.html#a68bc76197693dc5ac6c544e688ab597e',1,'llFloat::llFloat()']]],

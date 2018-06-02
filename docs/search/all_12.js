@@ -24,8 +24,9 @@ var searchData=
   ['togglestack',['toggleStack',['../classQ_1_1Editor.html#ab5b2e890139e315712ff6ed9c47c56b3',1,'Q::Editor']]],
   ['togglewords',['toggleWords',['../classQ_1_1Editor.html#a84554cc074a2fe44ced5a58833c4927c',1,'Q::Editor']]],
   ['tokens',['tokens',['../group__parser.html#gad543af2f416d960477d9f861cccb6b31',1,'Q']]],
-  ['toklen',['toklen',['../classQ_1_1Qbject.html#afcf407d08d32d19dd2ce587dc2d37a7d',1,'Q::Qbject']]],
+  ['toklen',['toklen',['../classQ_1_1Qbject.html#afcf407d08d32d19dd2ce587dc2d37a7d',1,'Q.Qbject.toklen()'],['../classQbject_1_1Qbject.html#ae1182818eba8f829aa8be89b8e4d828a',1,'Qbject.Qbject.toklen()']]],
   ['top',['top',['../classQ_1_1Stack.html#aaf6959bceb89a4798e24ee942bb2c1b4',1,'Q::Stack']]],
+  ['trapezoid',['Trapezoid',['../classFuzzy_1_1Trapezoid.html',1,'Fuzzy']]],
   ['triplet',['triplet',['../structllModule.html#a2285327c87a2d3b163aee22417d93c4a',1,'llModule']]],
-  ['type',['type',['../classQ_1_1Qbject.html#a0aa624c54899f7c7752fcb6b4c2f6386',1,'Q::Qbject']]]
+  ['type',['type',['../classQ_1_1Qbject.html#a0aa624c54899f7c7752fcb6b4c2f6386',1,'Q.Qbject.type()'],['../classQbject_1_1Qbject.html#a52093dc772ca78a3c5a2dee5a2ef904f',1,'Qbject.Qbject.type()']]]
 ];

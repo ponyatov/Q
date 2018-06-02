@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gui',['GUI',['../group__gui.html',1,'']]]
+  ['fuzzy',['Fuzzy',['../group__fuzzy.html',1,'']]]
 ];
