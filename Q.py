@@ -27,7 +27,11 @@ ABOUT   = '''
 * script languages: Python FORTH SmallTalk
 * DB: (hyper)graph object knowledge database
 * AI: Mynsky frames semantic hypergraph inference system
-* metaprogramming and managed compilation:
+* metaprogramming and managed compilation
+* @ref pls for learning via @ref GameDev
+* embedded systems firmware development
+  * C89/LLVM backend 
+  * @ref STM32 
 ''' 
 
 ## README.md
@@ -207,7 +211,7 @@ class Function(Meta):
         self.fn = F
     ## implement callable via wrapped function call
     def __call__(self): return self.fn()
-
+    
 ## @}
     
 ## @}
@@ -390,10 +394,15 @@ def INTERPRET(SRC=''):
     lexer.input(SRC)
     while True:
         if not WORD(): break    # end of source
-        if D.top().type in ['symbol','operator']:
+        if D.top().type in ['symbol','operator','defoperator']:
             FIND()
         EXECUTE()
     main.onRefresh(None)
+
+## @}
+
+## @defgroup compiler Compiler
+## @{
 
 ## @}
 
@@ -567,7 +576,7 @@ class Editor(wx.Frame):
         char = e.GetKeyCode() ; ctrl = e.CmdDown() ; shift = e.ShiftDown()
         if char == 0x0D and ctrl or shift:
             Q.put(self.editor.GetSelectedText())
-        else: e.Skip()
+        e.Skip()
     
     ## toggle words window
     def toggleWords(self,e):

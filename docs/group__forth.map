@@ -1,7 +1,8 @@
 <map id="oFORTH" name="oFORTH">
 <area shape="rect" id="node1" href="$group__queue.html" title="queue holds requests to FORTH interpreter " alt="" coords="128,5,263,32"/>
-<area shape="rect" id="node2" href="$group__interpret.html" title="Interpreter" alt="" coords="155,56,236,83"/>
-<area shape="rect" id="node4" href="$group__voc.html" title="System&#45;wide bindings between symbols (word names) and (executable) objects. " alt="" coords="152,107,239,133"/>
-<area shape="rect" id="node5" href="$group__parser.html" title="powered with PLY library " alt="" coords="144,157,247,184"/>
-<area shape="rect" id="node6" href="$group__debug.html" title="Debug" alt="" coords="165,208,225,235"/>
+<area shape="rect" id="node2" href="$group__compiler.html" title="Compiler" alt="" coords="158,56,233,83"/>
+<area shape="rect" id="node3" href="$group__interpret.html" title="Interpreter" alt="" coords="155,107,236,133"/>
+<area shape="rect" id="node5" href="$group__voc.html" title="System&#45;wide bindings between symbols (word names) and (executable) objects. " alt="" coords="152,157,239,184"/>
+<area shape="rect" id="node6" href="$group__parser.html" title="powered with PLY library " alt="" coords="144,208,247,235"/>
+<area shape="rect" id="node7" href="$group__debug.html" title="Debug" alt="" coords="165,259,225,285"/>
 </map>
