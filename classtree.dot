@@ -1,0 +1,17 @@
+
+digraph SymClassTree {
+    rankdir=TB;
+    Qbject -> Primitive -> Symbol;
+    Primitive -> Number -> Integer;
+	Integer -> Hex; Integer -> Bin;
+    Primitive -> String;
+    Qbject -> Container -> Stack;
+	Container -> Vector -> ColonDef;
+	Container -> Map;
+	Container -> Var -> Const;
+	Qbject -> Active -> Function;
+	Active -> Operator;
+	Active -> Module;
+	Active -> ColonDef;
+    
+}
