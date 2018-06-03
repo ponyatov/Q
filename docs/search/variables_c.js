@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['readme',['README',['../group__metainfo.html#ga79014de61338491cd87643f9b1ab43c3',1,'Q']]],
-  ['refresh',['refresh',['../classQ_1_1Editor.html#ab6da45a41ff743710189ab75cf967fab',1,'Q::Editor']]]
+  ['q',['Q',['../group__queue.html#ga547d8490204007cd7687931415008da4',1,'Q']]],
+  ['quit',['quit',['../classQ_1_1Editor.html#a8d3c587fd4772abd6482caa84709826c',1,'Q::Editor']]]
 ];

@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['qtoys_3a_20programming_20learning_20system',['qToys: Programming Learning System',['../pls.html',1,'']]],
-  ['q',['Q',['../group__queue.html#ga3a7f5a7790e091902a452b96c070b85f',1,'Q']]],
-  ['q_2epy',['Q.py',['../Q_8py.html',1,'']]],
-  ['qbject',['Qbject',['../classQ_1_1Qbject.html',1,'Q']]],
-  ['qbject',['Qbject',['../classQbject_1_1Qbject.html',1,'Qbject']]],
-  ['qbject_20class_20tree',['Qbject class tree',['../group__qbject.html',1,'']]],
-  ['qbject_2epy',['Qbject.py',['../Qbject_8py.html',1,'']]],
-  ['qbject_20class_20tree',['Qbject class tree',['../group__qfuzzy.html',1,'']]],
-  ['quit',['quit',['../classQ_1_1Editor.html#a8d3c587fd4772abd6482caa84709826c',1,'Q::Editor']]]
+  ['pad',['pad',['../classQ_1_1Qbject.html#a3aaf619242775996525e7ce4c6fd1bc2',1,'Q.Qbject.pad()'],['../classQbject_1_1Qbject.html#a85897b14eadc756185392e0eacde8695',1,'Qbject.Qbject.pad()']]],
+  ['persistent_20storage',['persistent storage',['../group__persist.html',1,'']]],
+  ['pop',['pop',['../classQ_1_1Qbject.html#a38851f4eee0b56ae096e4ef6c14eceea',1,'Q::Qbject']]],
+  ['primitive',['Primitive',['../group__prim.html',1,'']]],
+  ['primitive',['Primitive',['../classQ_1_1Primitive.html',1,'Q']]],
+  ['push',['push',['../classQ_1_1Qbject.html#a4bee8505b06a4ccecb03f13df1c8cff4',1,'Q::Qbject']]]
 ];

@@ -1,4 +1,4 @@
-: init ( -- ) ;							\ empty colon definition
+: init ( -- ) nop ;						\ empty colon definition
 : recurce ( -- ) recurce init recurce ;	\ recursive definition (head/tail)
 
 's\t\ri\ng' -01 +02.3 -0.4e+05 0xDeadBeef 0b1101	\ numbers

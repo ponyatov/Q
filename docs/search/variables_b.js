@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['q',['Q',['../group__queue.html#ga3a7f5a7790e091902a452b96c070b85f',1,'Q']]],
-  ['quit',['quit',['../classQ_1_1Editor.html#a8d3c587fd4772abd6482caa84709826c',1,'Q::Editor']]]
+  ['nest',['nest',['../classQ_1_1Qbject.html#a9673f14558a7e15cdbacc688794ffda4',1,'Q.Qbject.nest()'],['../classQbject_1_1Qbject.html#a8ca602b07e14e57d50f5d5b8600e6c5f',1,'Qbject.Qbject.nest()']]]
 ];

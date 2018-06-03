@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['head',['head',['../classQ_1_1Qbject.html#a78319704695b13f61ea5fa1654945592',1,'Q.Qbject.head()'],['../classQ_1_1String.html#aa3dfadf8bdd24b4a2b87106fb15a9c8c',1,'Q.String.head()'],['../classQ_1_1Hex.html#a7741f75bcc9e3c37d855183f2ce1715e',1,'Q.Hex.head()'],['../classQ_1_1Binary.html#a2bfcb8915e5ed1cc273851ed60327fab',1,'Q.Binary.head()'],['../classQ_1_1Comment.html#a91813305b5df77cbfff668a7204c6825',1,'Q.Comment.head()'],['../classFuzzy_1_1Set.html#ab4aa4f9c3bf89db4842c67ce7a2ea7f1',1,'Fuzzy.Set.head()'],['../classQbject_1_1Qbject.html#ab89fcb68a689ae0b52f11280c319fa52',1,'Qbject.Qbject.head()']]],
-  ['hello',['hello',['../group__ll.html#gad0902766c3251c06f4b32a6696796f29',1,'LL.cpp']]]
+  ['find',['FIND',['../group__interpret.html#gaf9c817bcc5faf09fe61414b9ce321c6d',1,'Q']]]
 ];

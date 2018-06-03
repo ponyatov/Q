@@ -65,6 +65,8 @@ class Qbject:
         self.nest = []
         ## `attr{}`ibutes /associative array, unordered/
         self.attr = {}
+        ## `immediate` flag for objects executes in compile mode
+        self.immed = False
         # process lexeme data
         if token:
             ## lexeme char position in source code
@@ -76,23 +78,47 @@ class Qbject:
             except AttributeError: self.toklen = len(token.value)
     ## by default all objects `execute`s in itself
     def __call__(self): D << self ; return self
+    
     ## `object[key]` operator
     def __getitem__(self,key): return self.attr[key]
     ## `object[key]=val` operator
     def __setitem__(self,key,o): self.attr[key] = o ; return self
+    
+    ## `<<` operator
+    def __lshift__(self,o): return self.push(o)
+    ## append element
+    def push(self,o): self.nest.append(o) ; return self
+    ## @returns top element /without removing/
+    def top(self): return self.nest[-1]
+    ## @returns top element
+    def pop(self): return self.nest.pop()
+    ## drop top element
+    def drop(self): del self.nest[-1] ; return self
+    
     ## text dump (tree form)
     def __repr__(self): return self.dump()
+    ## variable holds IDs of all dumped objects (to avoid infty recursion)
+    dumped = {} 
     ## dump any object in tree form
     def dump(self, depth=0,prefix=''):
+        # generate short header
         S = self.pad(depth) + self.head(prefix=prefix)
+        # avoid infty recursion
+        if not depth: self.dumped.clear()           # reset dumped registry
+        else:
+            if self in self.dumped: return S+'...'  # break dumps
+            else:                   self.dumped[self] = 0
+        # attributes
         for i in self.attr: S += self.attr[i].dump(depth+1,prefix='%s='%i)
+        # nest[]ed elements
         for j in self.nest: S += j.dump(depth+1)
         return S
     ## pad tree element
     def pad(self,N): return '\n' + '\t' * N
     ## dump object in short form (header only)
     def head(self,prefix=''):
-        return '%s<%s:%s>' % (prefix,self.type, self.value)
+        I = ' immed' if self.immed else ''
+        return '%s<%s:%s>%s' % (prefix, self.type, self.value, I)
     
 ## @defgroup prim Primitive
 ## @brief primitive computer types (evaluates to itself)
@@ -162,18 +188,19 @@ class Binary(Integer):
 ## @{
 
 ## data container
-class Container(Qbject): pass
-
-## data stack
-class Stack(Container):
-    ## `<<` operator
-    def __lshift__(self,o): self.nest.append(o) ; return self
-    ## @returns top element /without removing/
-    def top(self): return self.nest[-1]
-    ## @returns top element
-    def pop(self): return self.nest.pop()
+class Container(Qbject):
+    ## inherit init from `Qbject`
+    def __init__(self,V): Qbject.__init__(self, V)
     ## drop all elements
     def dropall(self): del self.nest[:]
+
+## data stack
+class Stack(Container): pass
+    
+## vector (list)
+class Vector(Container):
+    ## inherit init from `Container`
+    def __init__(self,V=''): Container.__init__(self,V)
 
 ## associative array (vocabulary)
 class Voc(Container):
@@ -181,7 +208,20 @@ class Voc(Container):
     def __lshift__(self,o):
         self.attr[o.__name__] = Function(o)
         return self
+    ## return keys
+    def keys(self): return self.attr.keys()
     
+## colon definition (executable vector)
+class ColonDef(Vector):
+    ## inherit init from `Vector`
+    ## param[in] immed immediate flag can be set 
+    def __init__(self,V,immed=False):
+        Vector.__init__(self,V)
+        ## override `immed` flag
+        self.immed = immed
+    ## execute colondef
+    def __call__(self): raise BaseException(self)
+
 ## @}
 
 ## @defgroup meta Meta
@@ -205,10 +245,12 @@ class DefOperator(Operator): pass
 ## function
 class Function(Meta):
     ## wrap Python function 
-    def __init__(self,F):
+    def __init__(self,F,immed=False):
         Meta.__init__(self, F.__name__)
         ## wrap function
         self.fn = F
+        ## immediate flag
+        self.immed = immed
     ## implement callable via wrapped function call
     def __call__(self): return self.fn()
     
@@ -218,6 +260,7 @@ class Function(Meta):
 
 ## @defgroup persist persistent storage
 ## @brief store system state in `.image` file
+## @ingroup voc
 ## @{ 
 
 import pickle
@@ -225,34 +268,27 @@ import pickle
 ## image file name
 IMAGE = sys.argv[0] + '.image'
 
-## backup to `.image`
-## @param[in] W object to backup (vocabulary)
-def backup(W):
-    F = open(IMAGE,'wb') ; pickle.dump(W,F) ; F.close()
-## restore from `.image`
-## @param[in] NAME name of new empty vocabulary
-## @return restored vocabulary    
-def restore(NAME='FORTH'):
-    F = open(IMAGE,'rb') ; W = pickle.load(F) ; F.close()
-    return W
+## backup vocabulary to `.image`
+def backup():
+    B = {}
+    # filter vocabulary ignoring all functions (VM commands) 
+    for i in W.keys():
+        if W[i].type not in ['function']: B[i] = W[i]
+    F = open(IMAGE,'wb') ; pickle.dump(B,F) ; F.close()
+
+## restore from vocabulary  `.image`
+def restore():
+    global W
+    try: F = open(IMAGE,'rb') ; B = pickle.load(F) ; F.close()
+    except IOError: B = {}
+    # override all elements from image
+    for i in B: W[i] = B[i]
 
 ## @}
 
 ## @defgroup forth oFORTH
 ## @brief object FORTH interpreter
 ## @{
-
-## data stack
-D = Stack('DATA')
-
-## @defgroup debug Debug
-## @{
-
-## @brief clean interpreter state in every code logic block `= DROPALL` 
-## @details drop data stack
-def dot(): D.dropall()
-
-## @}
 
 ## @defgroup parser Syntax parser
 ## @brief powered with
@@ -326,7 +362,7 @@ def t_newline(t):
 
 ## comment lexeme
 def t_comment(t):
-    r'[\#\\].*\n'
+    r'[\#\\].*\n|\(.*?\)'
     return Comment(t.value, token=t)
 
 ## hex
@@ -373,36 +409,12 @@ lexer = lex.lex()
 
 ## @}
 
-## @defgroup interpret Interpreter
+## @defgroup stack Data stack
+## @brief `and` stack operations
 ## @{
 
-## `WORD ( -- symbol )` parse next word name
-def WORD():
-    token = lexer.token()
-    if token: D << token
-    return token
-
-## `FIND ( wordname -- callable )` lookup definition/callable object in vocabulary
-def FIND():
-    WN = D.pop().value ; D << W[WN]
-    
-## `EXECUTE ( callable|primitive -- ...|primitive )` execute callable
-def EXECUTE(): D.pop()()
-
-## `INTERPRET ( -- )` interpreter loop
-def INTERPRET(SRC=''):
-    lexer.input(SRC)
-    while True:
-        if not WORD(): break    # end of source
-        if D.top().type in ['symbol','operator','defoperator']:
-            FIND()
-        EXECUTE()
-    main.onRefresh(None)
-
-## @}
-
-## @defgroup compiler Compiler
-## @{
+## data stack
+D = Stack('DATA')
 
 ## @}
 
@@ -412,12 +424,83 @@ def INTERPRET(SRC=''):
 
 ## system vocabulary
 
-try: W = restore('FORTH')
-except IOError:
-    W = Voc('FORTH')
-    W << WORD << FIND << INTERPRET
-    W['.'] = Function(dot)
-    backup(W)
+W = Voc('FORTH')
+# try: W = restore('FORTH')
+# except IOError:
+#     W = Voc('FORTH')
+#     W << WORD << FIND << INTERPRET
+#     W['.'] = Function(dot)
+#     backup(W)
+
+## @}
+
+## @defgroup debug Debug
+## @{
+
+## @brief clean interpreter state in every code logic block `= DROPALL` 
+## @details drop data stack
+def dot(): D.dropall()
+W['.'] = Function(dot)
+
+## @}
+
+## @defgroup interpret Interpreter
+## @{
+
+## `WORD ( -- symbol )` parse next word name
+def WORD():
+    token = lexer.token()
+    if token: D << token
+    return token
+W << WORD
+
+## `FIND ( wordname -- callable )` lookup definition/callable object in vocabulary
+def FIND():
+    WN = D.pop().value ; D << W[WN]
+W << FIND
+    
+## `EXECUTE ( callable|primitive -- ...|primitive )` execute callable
+def EXECUTE(): D.pop()()
+W << EXECUTE
+
+## `INTERPRET ( -- )` interpreter loop
+def INTERPRET(SRC=''):
+    lexer.input(SRC)
+    while True:
+        if not WORD(): break            # end of source
+        if D.top().type in ['comment']: # drop comments
+            D.drop() ; continue         # and skip loop
+        if D.top().type in ['symbol','operator','defoperator']:
+            FIND()
+        if not COMPILE or D.top().immed:# interpreter mode or immed object
+            EXECUTE()
+        else: COMPILE << D.pop()        # compiler mode
+    main.onRefresh(None)
+W << INTERPRET
+
+## @}
+
+## @defgroup compiler Compiler
+## @brief compiles definitnios into internal representation, not machine code 
+## @{
+
+## Vm register contains current definition or None in tnterpreter mode
+COMPILE = None
+
+## `: ( -- )` begin colon definition
+def colon():
+    global COMPILE
+    WORD() ; WN = D.pop().value
+    W[WN] = COMPILE = ColonDef(WN)
+W[':'] = Function(colon)
+
+## `; ( -- )` end colon definition
+def semicolon(): global COMPILE ; COMPILE = None
+W[';'] = Function(semicolon,immed=True)
+
+## `nop ( -- )` no nothing (test function for compiler)
+def nop(): pass
+W << nop
 
 ## @}
 
@@ -439,10 +522,11 @@ class FORTH_thread(threading.Thread):
         self.stop = False
     ## loop processing
     def run(self):
+        global COMPILE
         while not self.stop:
             try: INTERPRET(Q.get(timeout=1))
             except Queue.Empty: pass
-            except KeyError, err: print KeyError,err
+            except KeyError, err: print KeyError,err ; COMPILE = None
 ## singleton            
 forth_thread = FORTH_thread()
 
@@ -602,7 +686,7 @@ class Editor(wx.Frame):
             F = open(self.Title,'r') ; self.editor.SetValue(F.read()) ; F.close()
         except IOError: pass # no file
     ## backup (hybernation)
-    def onBackup(self,e): backup(W)
+    def onBackup(self,e): backup()
 
 ## main window
 main = Editor(None, title = sys.argv[0] + '.src') ; main.Show()
@@ -626,6 +710,7 @@ gui_thread = GUI_thread()
 ## @}
 
 if __name__ == '__main__':
+    restore()
     forth_thread.start()
     gui_thread.start()
     gui_thread.join()

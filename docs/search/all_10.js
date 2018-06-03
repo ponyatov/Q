@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['readme',['README',['../group__metainfo.html#ga79014de61338491cd87643f9b1ab43c3',1,'Q']]],
-  ['refresh',['refresh',['../classQ_1_1Editor.html#ab6da45a41ff743710189ab75cf967fab',1,'Q::Editor']]],
-  ['restore',['restore',['../group__persist.html#gac2bb057427791481fdb53b6c9e57ea32',1,'Q']]],
-  ['run',['run',['../classQ_1_1FORTH__thread.html#a9906fd20c553f9fc8b1d65397a9b74df',1,'Q.FORTH_thread.run()'],['../classQ_1_1GUI__thread.html#ad376297ea1c9bb0836171535075244a4',1,'Q.GUI_thread.run()']]]
+  ['q',['Q',['../index.html',1,'']]],
+  ['qtoys_3a_20programming_20learning_20system',['qToys: Programming Learning System',['../pls.html',1,'']]],
+  ['q',['Q',['../group__queue.html#ga547d8490204007cd7687931415008da4',1,'Q']]],
+  ['q_2epy',['Q.py',['../Q_8py.html',1,'']]],
+  ['qbject',['Qbject',['../classQbject_1_1Qbject.html',1,'Qbject.Qbject'],['../classQ_1_1Qbject.html',1,'Q.Qbject'],['../group__qbject.html',1,'(Global Namespace)']]],
+  ['qbject_2epy',['Qbject.py',['../Qbject_8py.html',1,'']]],
+  ['qbject_20class_20tree',['Qbject class tree',['../group__qfuzzy.html',1,'']]],
+  ['quit',['quit',['../classQ_1_1Editor.html#a8d3c587fd4772abd6482caa84709826c',1,'Q::Editor']]]
 ];

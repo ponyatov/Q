@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['image',['IMAGE',['../group__persist.html#gaf2b69d24042096560b6d5a842475ee68',1,'Q']]]
+  ['help',['help',['../classQ_1_1Editor.html#ab06338d8a7883a6325c42b9efaa0b4df',1,'Q::Editor']]]
 ];
