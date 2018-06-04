@@ -28,19 +28,28 @@ class Primitive(Qbject): pass
 ## symbols names other objects like variables, classes, functions, constants,.
 class Symbol(Primitive): pass
 
-## in computing it can be universal data type,
+## in computing string can be universal data type,
 ## look on [REFAL](http://en.wikipedia.org/wiki/Refal) language
 class String(Primitive):
     ## dump with escape characters
     def dump(self):
         S = '<%s:\'' % self.type
         for char in self.value:
-            if char == '\n': S += '\\n'
+            if   char == '\n': S += '\\n'
             elif char == '\r': S += '\\r'
             elif char == '\t': S += '\\t'
             else: S += char
         return S+'\'>'
+    
+## floating point number as mostly used in real applications
+class Number(Primitive):
+    ## we must override constructor to make `float(value)`
+    def __init__(self,V):
+        Primitive.__init__(self, V)
+        ## forced floating point value
+        self.value = float(V)
 
-print String('universal\ntype')
+print Number(3.1415), Number(-1), Number('3e5')
 
 ## @}
+
