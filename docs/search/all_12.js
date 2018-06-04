@@ -10,7 +10,7 @@ var searchData=
   ['states',['states',['../group__stringlex.html#ga788b2ab08a448c7ecaf17d22187dbab3',1,'Q']]],
   ['stm32',['STM32',['../group__stm32.html',1,'']]],
   ['stop',['stop',['../classQ_1_1FORTH__thread.html#a4e360f6e1fc3e045d56d1ebe52e24584',1,'Q.FORTH_thread.stop()'],['../Q_8py.html#acf5b45f27d3528a58fb98b35bc6139ae',1,'Q.stop()']]],
-  ['string',['String',['../classQ_1_1String.html',1,'Q']]],
+  ['string',['String',['../classQ_1_1String.html',1,'Q.String'],['../classSYM_1_1String.html',1,'SYM.String']]],
   ['string_20lexer_20state',['String lexer state',['../group__stringlex.html',1,'']]],
   ['style_5fcomment',['style_COMMENT',['../classQ_1_1Editor.html#a3c1c8fc94fcb11ab6eb9e46ec3997172',1,'Q::Editor']]],
   ['style_5fcompiler',['style_COMPILER',['../classQ_1_1Editor.html#adac6702a6eb8fbd57303dc163bbf3f78',1,'Q::Editor']]],
@@ -19,5 +19,5 @@ var searchData=
   ['style_5fstring',['style_STRING',['../classQ_1_1Editor.html#ab1e99b75f1f7756eb33709ef9aa28a4f',1,'Q::Editor']]],
   ['symbolic_20data_20type_20system',['Symbolic data type system',['../group__sym.html',1,'']]],
   ['sym_2epy',['SYM.py',['../SYM_8py.html',1,'']]],
-  ['symbol',['Symbol',['../classQ_1_1Symbol.html',1,'Q']]]
+  ['symbol',['Symbol',['../classSYM_1_1Symbol.html',1,'SYM.Symbol'],['../classQ_1_1Symbol.html',1,'Q.Symbol']]]
 ];
