@@ -17,5 +17,7 @@ var searchData=
   ['style_5fnumber',['style_NUMBER',['../classQ_1_1Editor.html#aed57738004541d3332b8642d4581e935',1,'Q::Editor']]],
   ['style_5foperator',['style_OPERATOR',['../classQ_1_1Editor.html#acf437b43094189353348d772cc15e5ed',1,'Q::Editor']]],
   ['style_5fstring',['style_STRING',['../classQ_1_1Editor.html#ab1e99b75f1f7756eb33709ef9aa28a4f',1,'Q::Editor']]],
+  ['symbolic_20data_20type_20system',['Symbolic data type system',['../group__sym.html',1,'']]],
+  ['sym_2epy',['SYM.py',['../SYM_8py.html',1,'']]],
   ['symbol',['Symbol',['../classQ_1_1Symbol.html',1,'Q']]]
 ];

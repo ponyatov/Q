@@ -4,6 +4,6 @@ var searchData=
   ['persistent_20storage',['persistent storage',['../group__persist.html',1,'']]],
   ['pop',['pop',['../classQ_1_1Qbject.html#a38851f4eee0b56ae096e4ef6c14eceea',1,'Q::Qbject']]],
   ['primitive',['Primitive',['../group__prim.html',1,'']]],
-  ['primitive',['Primitive',['../classQ_1_1Primitive.html',1,'Q']]],
+  ['primitive',['Primitive',['../classSYM_1_1Primitive.html',1,'SYM.Primitive'],['../classQ_1_1Primitive.html',1,'Q.Primitive']]],
   ['push',['push',['../classQ_1_1Qbject.html#a4bee8505b06a4ccecb03f13df1c8cff4',1,'Q::Qbject']]]
 ];

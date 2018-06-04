@@ -28,5 +28,5 @@ var searchData=
   ['top',['top',['../classQ_1_1Qbject.html#a944129f1a1a6e33eab0eac3c924b1de1',1,'Q::Qbject']]],
   ['trapezoid',['Trapezoid',['../classFuzzy_1_1Trapezoid.html',1,'Fuzzy']]],
   ['triplet',['triplet',['../structllModule.html#a2285327c87a2d3b163aee22417d93c4a',1,'llModule']]],
-  ['type',['type',['../classQ_1_1Qbject.html#a0aa624c54899f7c7752fcb6b4c2f6386',1,'Q.Qbject.type()'],['../classQbject_1_1Qbject.html#a52093dc772ca78a3c5a2dee5a2ef904f',1,'Qbject.Qbject.type()']]]
+  ['type',['type',['../classQ_1_1Qbject.html#a0aa624c54899f7c7752fcb6b4c2f6386',1,'Q.Qbject.type()'],['../classQbject_1_1Qbject.html#a52093dc772ca78a3c5a2dee5a2ef904f',1,'Qbject.Qbject.type()'],['../classSYM_1_1Qbject.html#aa0630a0931106f8d7a92102b13ad0867',1,'SYM.Qbject.type()']]]
 ];
