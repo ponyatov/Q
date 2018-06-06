@@ -1,5 +1,6 @@
 <map id="Qbject class tree" name="Qbject class tree">
 <area shape="rect" id="node1" href="$group__container.html" title="Objects can contain nested data elements. " alt="" coords="175,5,253,32"/>
 <area shape="rect" id="node2" href="$group__meta.html" title="Metaprogramming types and active objects. " alt="" coords="189,56,239,83"/>
-<area shape="rect" id="node4" href="$group__prim.html" title="primitive computer types (evaluates to itself) " alt="" coords="177,107,251,133"/>
+<area shape="rect" id="node4" href="$group__active.html" title="Objects has executable semantics. " alt="" coords="185,107,243,133"/>
+<area shape="rect" id="node5" href="$group__prim.html" title="primitive computer types (evaluates to itself) " alt="" coords="177,157,251,184"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qbject',['Qbject',['../classQ_1_1Qbject.html',1,'Q.Qbject'],['../classQbject_1_1Qbject.html',1,'Qbject.Qbject'],['../classSYM_1_1Qbject.html',1,'SYM.Qbject']]]
+  ['primitive',['Primitive',['../classQ_1_1Primitive.html',1,'Q.Primitive'],['../classSYM_1_1Primitive.html',1,'SYM.Primitive']]]
 ];

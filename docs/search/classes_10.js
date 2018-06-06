@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vector',['Vector',['../classQ_1_1Vector.html',1,'Q']]],
-  ['voc',['Voc',['../classQ_1_1Voc.html',1,'Q']]]
+  ['trapezoid',['Trapezoid',['../classFuzzy_1_1Trapezoid.html',1,'Fuzzy']]]
 ];

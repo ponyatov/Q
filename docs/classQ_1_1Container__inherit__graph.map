@@ -1,7 +1,6 @@
 <map id="Q.Container" name="Q.Container">
 <area shape="rect" id="node3" href="$classQ_1_1Stack.html" title="data stack " alt="" coords="5,155,76,181"/>
 <area shape="rect" id="node4" href="$classQ_1_1Vector.html" title="vector (list) " alt="" coords="101,155,175,181"/>
-<area shape="rect" id="node6" href="$classQ_1_1Voc.html" title="associative array (vocabulary) " alt="" coords="199,155,258,181"/>
+<area shape="rect" id="node5" href="$classQ_1_1Voc.html" title="associative array (vocabulary) " alt="" coords="199,155,258,181"/>
 <area shape="rect" id="node2" href="$classQ_1_1Qbject.html" title="generic Object class (the name was chosen not to interfere with Python3) " alt="" coords="101,5,175,32"/>
-<area shape="rect" id="node5" href="$classQ_1_1ColonDef.html" title="colon definition (executable vector) " alt="" coords="93,229,183,256"/>
 </map>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['number',['Number',['../classSYM_1_1Number.html',1,'SYM.Number'],['../classQ_1_1Number.html',1,'Q.Number']]]
+  ['member',['Member',['../classFuzzy_1_1Member.html',1,'Fuzzy']]],
+  ['meta',['Meta',['../classQ_1_1Meta.html',1,'Q']]]
 ];

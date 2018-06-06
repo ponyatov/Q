@@ -56,7 +56,7 @@ github: %s
 ## generic Object class (the name was chosen not to interfere with Python3)
 class Qbject:
     ## construct with given value
-    def __init__(self, V, token=None):
+    def __init__(self, V, token=None, doc=''):
         ## <type:value> must be compatible with PLY library token objects
         self.type = self.__class__.__name__.lower()
         ## single value
@@ -65,6 +65,8 @@ class Qbject:
         self.nest = []
         ## `attr{}`ibutes /associative array, unordered/
         self.attr = {}
+        ## docstring
+        if doc: self['doc'] = String(doc)
         ## `immediate` flag for objects executes in compile mode
         self.immed = False
         # process lexeme data
@@ -118,7 +120,7 @@ class Qbject:
     ## dump object in short form (header only)
     def head(self,prefix=''):
         I = ' immed' if self.immed else ''
-        return '%s<%s:%s>%s' % (prefix, self.type, self.value, I)
+        return '%s<%s:%s> 0x%X %s' % (prefix, self.type, self.value, id(self), I)
     
 ## @defgroup prim Primitive
 ## @brief primitive computer types (evaluates to itself)
@@ -211,17 +213,38 @@ class Voc(Container):
     ## return keys
     def keys(self): return self.attr.keys()
     
+## @}
+
+## @defgroup active Active
+## @brief Objects has executable semantics
+## @{
+
+## @brief Objects has executable semantics
+class Active(Qbject): pass
+
 ## colon definition (executable vector)
-class ColonDef(Vector):
+class ColonDef(Active):
     ## inherit init from `Vector`
     ## param[in] immed immediate flag can be set 
     def __init__(self,V,immed=False):
-        Vector.__init__(self,V)
+        Active.__init__(self,V)
         ## override `immed` flag
         self.immed = immed
     ## execute colondef
     def __call__(self): raise BaseException(self)
 
+## function
+class Function(Active):
+    ## wrap Python function 
+    def __init__(self,F,immed=False,doc=''):
+        Active.__init__(self, F.__name__, doc=doc)
+        ## wrap function
+        self.fn = F
+        ## immediate flag
+        self.immed = immed
+    ## implement callable via wrapped function call
+    def __call__(self): return self.fn()
+    
 ## @}
 
 ## @defgroup meta Meta
@@ -242,18 +265,6 @@ class Operator(Meta): pass
 ## definition operator (compiler words)
 class DefOperator(Operator): pass
 
-## function
-class Function(Meta):
-    ## wrap Python function 
-    def __init__(self,F,immed=False):
-        Meta.__init__(self, F.__name__)
-        ## wrap function
-        self.fn = F
-        ## immediate flag
-        self.immed = immed
-    ## implement callable via wrapped function call
-    def __call__(self): return self.fn()
-    
 ## @}
     
 ## @}
@@ -387,7 +398,7 @@ def t_integer(t):
 
 ## operator
 def t_operator(t):
-    r'[\(\)\<\>\@\.\+\-\*\/]'
+    r'[\(\)\<\>\@\.\+\-\*\/\`]'
     return Operator(t.value, token=t)
 
 ## compiler words
@@ -437,10 +448,10 @@ W = Voc('FORTH')
 ## @defgroup debug Debug
 ## @{
 
-## @brief clean interpreter state in every code logic block `= DROPALL` 
+## @brief `. ( .. -- ) ` clean interpreter state in every code logic block `= DROPALL` 
 ## @details drop data stack
 def dot(): D.dropall()
-W['.'] = Function(dot)
+W['.'] = Function(dot,doc=' . ( ... -- ) cleanup at end of code block ')
 
 ## @}
 
@@ -449,9 +460,11 @@ W['.'] = Function(dot)
 
 ## `WORD ( -- symbol )` parse next word name
 def WORD():
-    token = lexer.token()
-    if token: D << token
-    return token
+    while True:
+        token = lexer.token()                   # parse next lexeme
+        if not token: return None               # end of source
+        if token.type == 'comment': continue    # skip comments
+        D << token ; return token               # found good token
 W << WORD
 
 ## `FIND ( wordname -- callable )` lookup definition/callable object in vocabulary
@@ -463,13 +476,17 @@ W << FIND
 def EXECUTE(): D.pop()()
 W << EXECUTE
 
+## `\` ( -- )` put next symbol literally without lookup in vocabulary
+## (like :atom prefix in Elixir)
+def tick(): WORD() 
+W['`'] = Function(tick,immed=True,
+                  doc=' ` (--) quote: put next symbol literally ')
+
 ## `INTERPRET ( -- )` interpreter loop
 def INTERPRET(SRC=''):
     lexer.input(SRC)
     while True:
-        if not WORD(): break            # end of source
-        if D.top().type in ['comment']: # drop comments
-            D.drop() ; continue         # and skip loop
+        if not WORD(): break            # end of source: break interpreter loop
         if D.top().type in ['symbol','operator','defoperator']:
             FIND()
         if not COMPILE or D.top().immed:# interpreter mode or immed object

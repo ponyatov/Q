@@ -1,19 +1,20 @@
 <map id="Q.Qbject" name="Q.Qbject">
-<area shape="rect" id="node2" href="$classQ_1_1Container.html" title="data container " alt="" coords="137,80,229,107"/>
-<area shape="rect" id="node7" href="$classQ_1_1Meta.html" title="metaprogramming " alt="" coords="609,80,675,107"/>
-<area shape="rect" id="node12" href="$classQ_1_1Primitive.html" title="primitive " alt="" coords="384,80,471,107"/>
-<area shape="rect" id="node3" href="$classQ_1_1Stack.html" title="data stack " alt="" coords="5,155,76,181"/>
-<area shape="rect" id="node4" href="$classQ_1_1Vector.html" title="vector (list) " alt="" coords="101,155,175,181"/>
-<area shape="rect" id="node6" href="$classQ_1_1Voc.html" title="associative array (vocabulary) " alt="" coords="199,155,258,181"/>
-<area shape="rect" id="node5" href="$classQ_1_1ColonDef.html" title="colon definition (executable vector) " alt="" coords="93,229,183,256"/>
-<area shape="rect" id="node8" href="$classQ_1_1Comment.html" title="comment " alt="" coords="522,229,615,256"/>
-<area shape="rect" id="node9" href="$classQ_1_1Function.html" title="function " alt="" coords="640,155,727,181"/>
-<area shape="rect" id="node10" href="$classQ_1_1Operator.html" title="operator " alt="" coords="751,155,837,181"/>
-<area shape="rect" id="node11" href="$classQ_1_1DefOperator.html" title="definition operator (compiler words) " alt="" coords="741,229,847,256"/>
-<area shape="rect" id="node13" href="$classQ_1_1Number.html" title="number " alt="" coords="386,155,469,181"/>
-<area shape="rect" id="node17" href="$classQ_1_1String.html" title="string " alt="" coords="493,155,564,181"/>
-<area shape="rect" id="node18" href="$classQ_1_1Symbol.html" title="symbol " alt="" coords="282,155,362,181"/>
-<area shape="rect" id="node14" href="$classQ_1_1Integer.html" title="integer " alt="" coords="389,229,465,256"/>
-<area shape="rect" id="node15" href="$classQ_1_1Binary.html" title="machine binary " alt="" coords="345,304,419,331"/>
-<area shape="rect" id="node16" href="$classQ_1_1Hex.html" title="machine hex " alt="" coords="443,304,503,331"/>
+<area shape="rect" id="node2" href="$classQ_1_1Active.html" title="Objects has executable semantics. " alt="" coords="137,56,211,83"/>
+<area shape="rect" id="node5" href="$classQ_1_1Container.html" title="data container " alt="" coords="128,183,220,209"/>
+<area shape="rect" id="node9" href="$classQ_1_1Meta.html" title="metaprogramming " alt="" coords="141,259,207,285"/>
+<area shape="rect" id="node13" href="$classQ_1_1Primitive.html" title="primitive " alt="" coords="131,385,217,412"/>
+<area shape="rect" id="node3" href="$classQ_1_1ColonDef.html" title="colon definition (executable vector) " alt="" coords="268,5,359,32"/>
+<area shape="rect" id="node4" href="$classQ_1_1Function.html" title="function " alt="" coords="270,56,357,83"/>
+<area shape="rect" id="node6" href="$classQ_1_1Stack.html" title="data stack " alt="" coords="278,157,349,184"/>
+<area shape="rect" id="node7" href="$classQ_1_1Vector.html" title="vector (list) " alt="" coords="276,208,351,235"/>
+<area shape="rect" id="node8" href="$classQ_1_1Voc.html" title="associative array (vocabulary) " alt="" coords="284,107,343,133"/>
+<area shape="rect" id="node10" href="$classQ_1_1Comment.html" title="comment " alt="" coords="413,360,507,387"/>
+<area shape="rect" id="node11" href="$classQ_1_1Operator.html" title="operator " alt="" coords="270,259,357,285"/>
+<area shape="rect" id="node12" href="$classQ_1_1DefOperator.html" title="definition operator (compiler words) " alt="" coords="407,259,513,285"/>
+<area shape="rect" id="node14" href="$classQ_1_1Number.html" title="number " alt="" coords="272,461,355,488"/>
+<area shape="rect" id="node18" href="$classQ_1_1String.html" title="string " alt="" coords="278,411,349,437"/>
+<area shape="rect" id="node19" href="$classQ_1_1Symbol.html" title="symbol " alt="" coords="273,360,353,387"/>
+<area shape="rect" id="node15" href="$classQ_1_1Integer.html" title="integer " alt="" coords="422,461,498,488"/>
+<area shape="rect" id="node16" href="$classQ_1_1Binary.html" title="machine binary " alt="" coords="561,436,635,463"/>
+<area shape="rect" id="node17" href="$classQ_1_1Hex.html" title="machine hex " alt="" coords="568,487,628,513"/>
 </map>
